@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:lottie/lottie.dart';
 
 class Success extends StatefulWidget {
   const Success({super.key});
@@ -19,9 +20,21 @@ class _SuccessState extends State<Success> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image(image: AssetImage('assets/images/payment-successful.gif')),
-        ],
-        Padding(
+          Center(
+            child: Lottie.network(
+                'https://assets6.lottiefiles.com/packages/lf20_niyfyoqs.json',
+                height: 275),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
+            child: Text(
+              'Successful',
+              textAlign: TextAlign.center,
+              style: TextStyle(fontSize: 18, color: Color(0xFF303030)),
+            ),
+          ),
+          Padding(
             padding:
                 const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16.0),
             child: Text(
@@ -41,7 +54,7 @@ class _SuccessState extends State<Success> {
               ),
               onPressed: () => Navigator.of(context)
                   .push(MaterialPageRoute(builder: (context) => Success())),
-              child: Text('Ok'),
+              child: Text('OK'),
             ),
           ),
         ],
