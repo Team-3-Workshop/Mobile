@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_tnbts/pages/payments_methode.dart';
 
 class payments extends StatefulWidget {
   const payments({super.key});
@@ -66,66 +67,105 @@ class _paymentsState extends State<payments> {
             ),
             Padding(
               padding: const EdgeInsets.only(top: 200),
-              child: SizedBox(
-                height: 300,
-                child: TabBarView(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            color: Colors.orangeAccent,
-                            borderRadius: BorderRadius.circular(8),
+              child: ListView(
+                children: [
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height,
+                    child: TabBarView(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(30.0),
+                          child: Column(
+                            children: [
+                              InkWell(
+                                  child: Container(
+                                      height: 250,
+                                      width: 350,
+                                      decoration: BoxDecoration(
+                                        color: Colors.orangeAccent,
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                          child: Text(
+                                        'Imuk',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ))),
+                                  onTap: () => Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                PaymentMethode()),
+                                      )),
+                              SizedBox(height: 25),
+                              InkWell(
+                                  child: Container(
+                                      height: 250,
+                                      width: 350,
+                                      decoration: BoxDecoration(
+                                        color: Colors.orangeAccent,
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                          child: Text(
+                                        'Dika',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ))),
+                                  onTap: () => Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                PaymentMethode()),
+                                      )),
+                              SizedBox(
+                                height: 25,
+                              ),
+                            ],
                           ),
-                          child: Center(
-                              child: Text(
-                            'Lapar',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ))),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(30.0),
+                          child: Container(
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                color: Colors.orangeAccent,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Center(
+                                  child: Text(
+                                'iya kh',
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ))),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(30.0),
+                          child: Container(
+                              height: 100,
+                              width: 100,
+                              decoration: BoxDecoration(
+                                color: Colors.orangeAccent,
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Center(
+                                  child: Text(
+                                'Yoighh',
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ))),
+                        ),
+                      ],
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            color: Colors.orangeAccent,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Center(
-                              child: Text(
-                            'iya kh',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ))),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(30.0),
-                      child: Container(
-                          height: 100,
-                          width: 100,
-                          decoration: BoxDecoration(
-                            color: Colors.orangeAccent,
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                          child: Center(
-                              child: Text(
-                            'Yoighh',
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ))),
-                    ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
           ],
