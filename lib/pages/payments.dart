@@ -76,7 +76,7 @@ class _paymentsState extends State<payments> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.all(30.0),
-                          child: Column(
+                          child: ListView(
                             children: [
                               InkWell(
                                   child: Container(
@@ -121,9 +121,28 @@ class _paymentsState extends State<payments> {
                                             builder: (context) =>
                                                 PaymentMethode()),
                                       )),
-                              SizedBox(
-                                height: 25,
-                              ),
+                              SizedBox(height: 25),
+                              InkWell(
+                                  child: Container(
+                                      height: 250,
+                                      width: 350,
+                                      decoration: BoxDecoration(
+                                        color: Colors.orangeAccent,
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                      child: Center(
+                                          child: Text(
+                                        'Roni',
+                                        style: TextStyle(
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ))),
+                                  onTap: () => Navigator.of(context).push(
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                PaymentMethode()),
+                                      )),
                             ],
                           ),
                         ),
