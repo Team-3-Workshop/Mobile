@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_tnbts/pages/payments_detail.dart';
 import 'package:ui_tnbts/pages/payments_methode.dart';
 
 class payments extends StatefulWidget {
@@ -96,7 +97,7 @@ class _paymentsState extends State<payments> {
                                   onTap: () => Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                PaymentMethode()),
+                                                PaymentDetail()),
                                       )),
                               SizedBox(height: 25),
                               InkWell(
