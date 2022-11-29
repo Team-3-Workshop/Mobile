@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_tnbts/pages/payments_methode.dart';
 
 class PaymentDetail extends StatefulWidget {
   const PaymentDetail({super.key});
@@ -31,9 +32,10 @@ class _PaymentDetailState extends State<PaymentDetail> {
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Padding(
-          padding: const EdgeInsets.only(top: 5),
+          padding: const EdgeInsets.only(top: 4),
           child: ListView(
             children: [
+              SizedBox(height: 6),
               OutlinedButton.icon(
                 style: ElevatedButton.styleFrom(
                   elevation: 0.0,
@@ -188,15 +190,169 @@ class _PaymentDetailState extends State<PaymentDetail> {
                 )
               ]),
               SizedBox(height: 5),
-              Column(
-                children: [
-                  Container(
-                    height: 200,
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Color(0xFFFFFFFF)),
+              OutlinedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  elevation: 0.0,
+                  shadowColor: Colors.transparent,
+                  primary: Color(0xFFFFFFFF),
+                ),
+                onPressed: () {
+                  // showDialog(
+                  //     context: context,
+                  //     builder: (BuildContext context) {
+                  //       return AlertDialog(
+                  //         scrollable: true,
+                  //         title: Text('Rincian Pembayaran'),
+                  //         content: Padding(
+                  //           padding: const EdgeInsets.all(8.0),
+                  //           child: Form(
+                  //             child: Column(
+                  //               children: <Widget>[
+                  //                 TextFormField(
+                  //                   decoration: InputDecoration(
+                  //                     labelText: 'Name',
+                  //                     icon: Icon(Icons.account_box),
+                  //                   ),
+                  //                 ),
+                  //                 TextFormField(
+                  //                   decoration: InputDecoration(
+                  //                     labelText: 'No. Handphone',
+                  //                     icon: Icon(Icons.aod_rounded),
+                  //                   ),
+                  //                 ),
+                  //                 TextFormField(
+                  //                   decoration: InputDecoration(
+                  //                     labelText: 'Address',
+                  //                     icon: Icon(Icons.home),
+                  //                   ),
+                  //                 ),
+                  //                 TextFormField(
+                  //                   decoration: InputDecoration(
+                  //                     labelText: 'Citizenship',
+                  //                     icon: Icon(Icons.badge_outlined),
+                  //                   ),
+                  //                 ),
+                  //               ],
+                  //             ),
+                  //           ),
+                  //         ),
+                  //         actions: [
+                  //           ElevatedButton(
+                  //               style: ElevatedButton.styleFrom(
+                  //                 primary: Color(0xFF25BAC2),
+                  //               ),
+                  //               child: Text("Submit"),
+                  //               onPressed: () => Navigator.of(context).pop()
+                  //               // onPressed: () => Navigator.of(context).push(
+                  //               //     MaterialPageRoute(
+                  //               //         builder: (context) => PaymentDetail())),
+                  //               ),
+                  //         ],
+                  //       );
+                  //     });
+                },
+                icon:
+                    Icon(Icons.article_outlined, color: Colors.yellow.shade600),
+                label: Column(
+                  children: <Widget>[
+                    SizedBox(
+                      height: 10,
                     ),
-                  ),
+                    Text(
+                      'Rincian Pembayaran                                                               ',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(color: Color(0xFF303030)),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      'Subtotal untuk Product                                      Rp 200.000                                ',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(color: Colors.grey[700], fontSize: 13),
+                    ),
+                    Text(
+                      'Subtotal untuk Transport                                   Rp 500.000                                ',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(color: Colors.grey[700], fontSize: 13),
+                    ),
+                    Text(
+                      'Total Diskon Pengirimaan                                      Rp 0.000                                ',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(color: Colors.grey[700], fontSize: 13),
+                    ),
+                    Text(
+                      'Total Diskon Transportasi                                      Rp 0.000                                ',
+                      textAlign: TextAlign.left,
+                      style: TextStyle(color: Colors.grey[700], fontSize: 13),
+                    ),
+                    Row(
+                      children: [
+                        Text(
+                          'Total pembayaran',
+                          textAlign: TextAlign.left,
+                          style:
+                              TextStyle(color: Color(0xFF303030), fontSize: 16),
+                        ),
+                        Text(
+                          '                            Rp 700.000',
+                          textAlign: TextAlign.left,
+                          style:
+                              TextStyle(color: Color(0xFF25BAC2), fontSize: 16),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: <Widget>[
+                  Expanded(
+                      child: SizedBox(
+                    height: 70,
+                    width: 70,
+                    child: Expanded(
+                      child: DecoratedBox(
+                        decoration: const BoxDecoration(color: Colors.white),
+                        child: Center(
+                          child: Column(
+                            children: [
+                              Text(''),
+                              Text(
+                                  '                              Total pembayaran'),
+                              Text(
+                                '                                 Rp 700.000',
+                                style: TextStyle(
+                                    color: Color(0xFF25BAC2), fontSize: 16),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  )),
+                  SizedBox(
+                    width: 150,
+                    height: 70,
+                    child: OutlinedButton(
+                      onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => PaymentMethode())),
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: Color(0xFF25BAC2), //<-- SEE HERE
+                      ),
+                      child: Text(
+                        '    Buat pesanan    ',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  )
                 ],
               ),
             ],
