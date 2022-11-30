@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/payments_unpaid.dart';
 
-class PaymentDetail extends StatefulWidget {
-  const PaymentDetail({super.key});
+class PaymentOngoing extends StatefulWidget {
+  const PaymentOngoing({super.key});
 
   @override
-  State<PaymentDetail> createState() => _PaymentDetailState();
+  State<PaymentOngoing> createState() => _PaymentOngoingState();
 }
 
-class _PaymentDetailState extends State<PaymentDetail> {
+class _PaymentOngoingState extends State<PaymentOngoing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: Text(
-          'Checkout                         ',
+          'Rincian biaya                         ',
           style: TextStyle(color: Color(0xFF303030)),
         ),
         leading: IconButton(
@@ -341,14 +340,12 @@ class _PaymentDetailState extends State<PaymentDetail> {
                     width: 150,
                     height: 70,
                     child: OutlinedButton(
-                      onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => PaymentMethode())),
+                      onPressed: () => Navigator.of(context).pop(),
                       style: OutlinedButton.styleFrom(
                         backgroundColor: Color(0xFF25BAC2), //<-- SEE HERE
                       ),
                       child: Text(
-                        '    Buat pesanan    ',
+                        '    Ok    ',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -360,5 +357,6 @@ class _PaymentDetailState extends State<PaymentDetail> {
         ),
       ),
     );
+    Scaffold();
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:ui_tnbts/pages/payments_detail.dart';
-import 'package:ui_tnbts/pages/payments_methode.dart';
+import 'package:ui_tnbts/pages/payments_finished.dart';
+import 'package:ui_tnbts/pages/payments_ongoing.dart';
+import 'package:ui_tnbts/pages/payments_unpaid.dart';
 
 class payments extends StatefulWidget {
   const payments({super.key});
@@ -119,7 +121,7 @@ class _paymentsState extends State<payments> {
                                   onTap: () => Navigator.of(context).push(
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                PaymentMethode()),
+                                                PaymentDetail()),
                                       )),
                               SizedBox(height: 25),
                               InkWell(
@@ -148,39 +150,49 @@ class _paymentsState extends State<payments> {
                         ),
                         Padding(
                           padding: const EdgeInsets.all(30.0),
-                          child: Container(
-                              height: 100,
-                              width: 100,
-                              decoration: BoxDecoration(
-                                color: Colors.orangeAccent,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Center(
-                                  child: Text(
-                                'iya kh',
-                                style: TextStyle(
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold,
+                          child: InkWell(
+                            child: Container(
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  color: Colors.orangeAccent,
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                              ))),
+                                child: Center(
+                                    child: Text(
+                                  'iya kh',
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ))),
+                            onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => PaymentOngoing())),
+                          ),
                         ),
                         Padding(
                           padding: const EdgeInsets.all(30.0),
-                          child: Container(
-                              height: 100,
-                              width: 100,
-                              decoration: BoxDecoration(
-                                color: Colors.orangeAccent,
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                              child: Center(
-                                  child: Text(
-                                'Yoighh',
-                                style: TextStyle(
-                                  fontSize: 30,
-                                  fontWeight: FontWeight.bold,
+                          child: InkWell(
+                            child: Container(
+                                height: 100,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                  color: Colors.orangeAccent,
+                                  borderRadius: BorderRadius.circular(8),
                                 ),
-                              ))),
+                                child: Center(
+                                    child: Text(
+                                  'Yoighh',
+                                  style: TextStyle(
+                                    fontSize: 30,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ))),
+                            onTap: () => Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    builder: (context) => PaymentFinished())),
+                          ),
                         ),
                       ],
                     ),
