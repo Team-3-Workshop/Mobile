@@ -1,11 +1,12 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:login/BottomBar.dart';
+import 'package:login/Page/home_page.dart';
 import 'Register.dart';
 import 'forgot_pw_page.dart';
+import 'package:http/http.dart' as http;
 
 class Loginscreen extends StatefulWidget {
   @override
@@ -15,14 +16,6 @@ class Loginscreen extends StatefulWidget {
 class _Loginscreenstate extends State<Loginscreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
-  Future signIn() async {
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim());
-    print(_emailController.text);
-    print(_passwordController.text);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -143,9 +136,7 @@ class _Loginscreenstate extends State<Loginscreen> {
                         borderRadius: BorderRadius.circular(30)),
                     backgroundColor: Color(0xff25bac2)),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return ProfilePage();
-                  }));
+                  auth();
                 },
                 child: Text(
                   "Sign in",
@@ -159,10 +150,7 @@ class _Loginscreenstate extends State<Loginscreen> {
                 Text("does'nt have an account..?"),
                 TextButton(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return register();
-                      }));
+                      auth();
                     },
                     child: Text(
                       "Register Now",
@@ -174,5 +162,30 @@ class _Loginscreenstate extends State<Loginscreen> {
         ),
       ),
     );
+  }
+
+  Future<void> auth() async {
+    if (_passwordController.text.isNotEmpty &&
+        _emailController.text.isNotEmpty) {
+      print("proses");
+      var response = await http.post(
+          Uri.parse("http://192.168.249.236:3000/auth/login"),
+          body: ({
+            'email': _emailController.text,
+            'password': _passwordController.text
+          }));
+      if (response.statusCode == 200) {
+        Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return HomePage();
+        }));
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text("invalid username or password")));
+      }
+    } else {
+      print("gagal");
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("blank field not allowed")));
+    }
   }
 }
