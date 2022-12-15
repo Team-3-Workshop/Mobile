@@ -5,6 +5,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:ui_tnbts/page/profile.dart';
 import 'package:ui_tnbts/page/tutorial.dart';
+import 'package:ui_tnbts/pages/payments.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -21,6 +22,9 @@ class _ProfilePageState extends State<ProfilePage> {
     Text('hahahahha'),
     Tutorial(),
     Profile(),
+    payments(),
+    Text('osas'),
+    Text('ossas'),
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
