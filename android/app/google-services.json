@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:646416656214:android:8594314f2a051b10b458f7",
         "android_client_info": {
-          "package_name": "com.roni.TNBTS"
+          "package_name": "com.example.login"
         }
       },
       "oauth_client": [

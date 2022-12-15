@@ -4,9 +4,9 @@ import 'package:http/http.dart' as http;
 import 'dart:convert';
 
 class Repository {
-  final _baseUrl = 'http://192.168.249.236:3000';
+  final _baseUrl = 'http://192.168.55.236:3000';
 
-  Future<bool> postData(
+  Future<bool> signUp(
       {firstName,
       lastName,
       fullName,
@@ -18,8 +18,7 @@ class Repository {
       email,
       password,
       role}) async {
-    print("oke");
-    var data = {
+    var response = await http.post(Uri.parse('$_baseUrl/auth/signup'), body: {
       'firstName': firstName,
       'lastName': lastName,
       'fullName': fullName,
@@ -31,21 +30,17 @@ class Repository {
       'email': email,
       'password': password,
       'role': role
-    };
+    });
 
-    final response = await http.post(
-      Uri.parse(_baseUrl + '/auth/signup'),
-      body: data,
-      headers: {"Content-Type": "application/x-www-form-urlencoded"},
-    );
-    print(response.body);
-    print(response.statusCode);
     if (response.statusCode == 201) {
-      print("succes");
+      // var result = json.decode(response.body);
+      // print(response);
+      // return true;
+      print("OK");
       return true;
     } else {
+      // throw response
       return false;
     }
   }
-
 }

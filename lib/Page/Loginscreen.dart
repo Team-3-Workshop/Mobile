@@ -150,7 +150,10 @@ class _Loginscreenstate extends State<Loginscreen> {
                 Text("does'nt have an account..?"),
                 TextButton(
                     onPressed: () {
-                      auth();
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return register();
+                      }));
                     },
                     child: Text(
                       "Register Now",
@@ -167,9 +170,8 @@ class _Loginscreenstate extends State<Loginscreen> {
   Future<void> auth() async {
     if (_passwordController.text.isNotEmpty &&
         _emailController.text.isNotEmpty) {
-      print("proses");
       var response = await http.post(
-          Uri.parse("http://192.168.249.236:3000/auth/login"),
+          Uri.parse("http://192.168.1.32:3000/auth/login"),
           body: ({
             'email': _emailController.text,
             'password': _passwordController.text

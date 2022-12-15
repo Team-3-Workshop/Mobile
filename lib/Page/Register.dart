@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:login/repository/repository.dart';
+import 'package:http/http.dart' as http;
+import 'dart:convert';
 
 class register extends StatefulWidget {
   const register({super.key});
@@ -443,21 +445,8 @@ class _registerState extends State<register> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30)),
                     backgroundColor: Color(0xff25bac2)),
-                onPressed: () async {
-                  bool response = await repository.postData(
-                      firstName: _firstNameController.text,
-                      lastName: _lastNameController.text,
-                      fullName: _fullNameController.text,
-                      citizen: _citizenController.text,
-                      nik: _nikController.text,
-                      addres: _addresController.text,
-                      date: _dateController.text,
-                      phone: _phoneController.text,
-                      email: _emailController.text,
-                      password: _passwordController.text,
-                      role: _roleController.text);
-
-                  print(response);
+                onPressed: () {
+                  postData();
                 },
                 child: Text(
                   "Sign Up",
@@ -470,5 +459,43 @@ class _registerState extends State<register> {
             )
           ]),
     ));
+  }
+
+  Future<void> postData() async {
+    print("oke");
+    // Map<String, String> header = {
+    //   "Content-Type": "application/x-www-form-urlencoded"
+    // };
+    var headers = {'Content-Type': 'application/x-www-form-urlencoded'};
+    // print(_dateController.text);
+    var request =
+        http.Request('POST', Uri.parse('http://192.168.1.32:3000/auth/signup'));
+    request.bodyFields = ({
+      'firstName': _firstNameController.text,
+      'lastName': _lastNameController.text,
+      'fullName': _fullNameController.text,
+      'citizen': _citizenController.text,
+      'nik': _nikController.text,
+      'address': _addresController.text,
+      'date': _dateController.text,
+      'phone': _phoneController.text,
+      'email': _emailController.text,
+      'password': _passwordController.text,
+      'role': _roleController.text
+    });
+    request.headers.addAll(headers);
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 201) {
+      print(await response.stream.bytesToString());
+      print(response);
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text("Succes")));
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Failed to Sign Up, Incorect input")));
+      print(response.reasonPhrase);
+    }
   }
 }
