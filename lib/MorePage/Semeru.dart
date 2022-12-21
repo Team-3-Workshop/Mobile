@@ -84,14 +84,13 @@ class SemeruState extends State<Semeru> {
                             Container(
                               height: double.infinity,
                               alignment: Alignment.topCenter,
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 25),
-                                child: ListView(
-                                  children: [
-                                    SizedBox(
-                                      height: 25,
-                                    ),
-                                    Wrap(
+                              child: ListView(
+                                children: [
+                                  SizedBox(
+                                    height: 25,
+                                  ),
+                                  Center(
+                                    child: Wrap(
                                       direction: Axis.horizontal,
                                       // alignment: WrapAlignment.center,
                                       spacing: 15.0,
@@ -218,8 +217,8 @@ class SemeruState extends State<Semeru> {
                                         ),
                                       ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             Center(

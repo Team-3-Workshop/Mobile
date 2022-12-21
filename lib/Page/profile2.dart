@@ -2,7 +2,9 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:login/Page/Loginscreen.dart';
 import 'package:login/Page/sop.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Profile2 extends StatelessWidget {
   const Profile2({super.key});
@@ -145,10 +147,74 @@ class Profile2 extends StatelessWidget {
                           size: 40.0, color: Colors.grey.shade400)),
                 ],
               ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25),
+                    child: Text(
+                      'Logout',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () async {
+                      SharedPreferences storage =
+                          await SharedPreferences.getInstance();
+                      storage.remove('data');
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext ctx) => Loginscreen()));
+                      // final logoutValue = await logout();
+                      // if (logoutValue == true) {
+                      //   Navigator.pushAndRemoveUntil(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => Loginscreen()),
+                      //     (Route<dynamic> route) => false,
+                      //   );
+                      // } else {
+                      //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      //       duration: Duration(seconds: 3),
+                      //       content: Text(
+                      //           "error with your id, please login again")));
+                      //   Navigator.pushAndRemoveUntil(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => Loginscreen()),
+                      //     (Route<dynamic> route) => false,
+                      //   );
+                      // }
+                    },
+                    child: Padding(
+                        padding: const EdgeInsets.only(left: 230),
+                        child: Icon(Icons.logout,
+                            size: 40.0, color: Colors.grey.shade400)),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  // @override
+  Future<bool> logout() async {
+    SharedPreferences storage = await SharedPreferences.getInstance();
+    final data = storage.getString('data');
+    if (data != null) {
+      await storage.remove('data');
+      return true;
+    } else {
+      return false;
+    }
   }
 }

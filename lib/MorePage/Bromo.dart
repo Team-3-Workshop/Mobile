@@ -74,23 +74,23 @@ class _BromoState extends State<Bromo> {
                         ),
                       ),
                       Container(
-                          height: 578, //height of TabBarView
+                          //height of TabBarView
+                          height: 650,
                           decoration: BoxDecoration(
                               border: Border(
                                   top: BorderSide(
                                       color: Colors.grey, width: 0.5))),
                           child: TabBarView(children: <Widget>[
                             Container(
-                              height: double.infinity,
+                              // height: 650,
                               alignment: Alignment.topCenter,
-                              child: Padding(
-                                padding: EdgeInsets.only(left: 25),
-                                child: ListView(
-                                  children: [
-                                    SizedBox(
-                                      height: 25,
-                                    ),
-                                    Wrap(
+                              child: ListView(
+                                children: [
+                                  SizedBox(
+                                    height: 25,
+                                  ),
+                                  Center(
+                                    child: Wrap(
                                       direction: Axis.horizontal,
                                       // alignment: WrapAlignment.center,
                                       spacing: 15.0,
@@ -217,8 +217,8 @@ class _BromoState extends State<Bromo> {
                                         ),
                                       ],
                                     ),
-                                  ],
-                                ),
+                                  ),
+                                ],
                               ),
                             ),
                             Center(

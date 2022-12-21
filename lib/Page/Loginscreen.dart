@@ -1,9 +1,14 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:login/BottomBar.dart';
 import 'package:login/Page/home_page.dart';
+import 'package:login/Page/register2.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'Register.dart';
 import 'forgot_pw_page.dart';
 import 'package:http/http.dart' as http;
@@ -20,7 +25,7 @@ class _Loginscreenstate extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      // resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -135,7 +140,8 @@ class _Loginscreenstate extends State<Loginscreen> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30)),
                     backgroundColor: Color(0xff25bac2)),
-                onPressed: () {
+                onPressed: () async {
+                  print("pressed");
                   auth();
                 },
                 child: Text(
@@ -152,7 +158,7 @@ class _Loginscreenstate extends State<Loginscreen> {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return register();
+                        return register2();
                       }));
                     },
                     child: Text(
@@ -168,23 +174,35 @@ class _Loginscreenstate extends State<Loginscreen> {
   }
 
   Future<void> auth() async {
+    EasyLoading.show(status: 'loading...');
+
     if (_passwordController.text.isNotEmpty &&
         _emailController.text.isNotEmpty) {
       var response = await http.post(
-          Uri.parse("http://192.168.1.32:3000/auth/login"),
+          Uri.parse("http://192.168.103.236:3000/auth/login"),
           body: ({
             'email': _emailController.text,
             'password': _passwordController.text
           }));
+      final output = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return HomePage();
-        }));
+        EasyLoading.dismiss();
+        print("auth");
+        SharedPreferences storage = await SharedPreferences.getInstance();
+        await storage.setString('data', output['data']['email']);
+        // ignore: use_build_context_synchronously
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (BuildContext ctx) => ProfilePage()));
+        print(output['data']['email']);
       } else {
+        EasyLoading.dismiss();
+        print("false");
         ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("invalid username or password")));
+            // SnackBar(content: Text("invalid username or password")));
+            SnackBar(content: Text(output['message'])));
       }
     } else {
+      EasyLoading.dismiss();
       print("gagal");
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text("blank field not allowed")));

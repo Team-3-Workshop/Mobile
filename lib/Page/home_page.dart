@@ -338,12 +338,11 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 33.0, top: 20.0),
+            padding: const EdgeInsets.only(left: 33.0, top: 20.0, bottom: 20.0),
             child: Text("Tickets :",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 33.0, top: 20.0),
+          Center(
             child: Wrap(
                 direction: Axis.horizontal,
                 // alignment: WrapAlignment.center,
@@ -366,6 +365,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           height: 150,
                           width: 200,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 115),
+                            child: Text(
+                              "IDR 35.000",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
                         ),
                         Container(
                             height: 100,
@@ -396,6 +403,14 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.grey[400]),
                           height: 150,
                           width: 150,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 115),
+                            child: Text(
+                              "IDR 15.000",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
                         ),
                         Container(
                             height: 100,
@@ -427,6 +442,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           height: 150,
                           width: 150,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 115),
+                            child: Text(
+                              "IDR 35.000",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
                         ),
                         Container(
                             height: 100,
@@ -458,6 +481,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           height: 150,
                           width: 150,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 115),
+                            child: Text(
+                              "IDR 50.000",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
                         ),
                         Container(
                             height: 100,
@@ -489,6 +520,14 @@ class _HomePageState extends State<HomePage> {
                           ),
                           height: 150,
                           width: 150,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 115),
+                            child: Text(
+                              "IDR 35.000",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 20),
+                            ),
+                          ),
                         ),
                         Container(
                             height: 100,
@@ -500,7 +539,8 @@ class _HomePageState extends State<HomePage> {
                             // color: Colors.blue,
                             child: Center(
                                 child: Text(
-                              "Bromo",
+                              "Ranu Regulo",
+                              textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontFamily: 'KaushanScript', fontSize: 30),
                               // textScaleFactor: 1.0,
