@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:lottie/lottie.dart';
-import 'package:ui_tnbts/BottomBar.dart';
+import 'package:login/BottomBar.dart';
 
 class Success extends StatefulWidget {
   const Success({super.key});

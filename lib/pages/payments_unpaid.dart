@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/success.dart';
+import 'package:login/pages/success.dart';
 
 class PaymentMethode extends StatefulWidget {
   const PaymentMethode({super.key});

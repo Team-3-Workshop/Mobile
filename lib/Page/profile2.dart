@@ -6,6 +6,8 @@ import 'package:login/Page/Loginscreen.dart';
 import 'package:login/Page/sop.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../pages/payments.dart';
+
 class Profile2 extends StatelessWidget {
   const Profile2({super.key});
 
@@ -116,7 +118,7 @@ class Profile2 extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return sop();
+                        return payments();
                       }));
                     },
                     child: Padding(

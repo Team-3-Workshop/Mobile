@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/payments_unpaid.dart';
+import 'package:login/pages/payments_unpaid.dart';
 
 class PaymentDetail extends StatefulWidget {
   const PaymentDetail({super.key});
