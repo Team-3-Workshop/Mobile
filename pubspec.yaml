@@ -34,6 +34,17 @@ dependencies:
     sdk: flutter
   google_nav_bar: ^5.0.6
   http: ^0.13.5
+  line_icons: ^2.0.1
+  pdf: ^3.8.4
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+  flutter_pdfview: ^1.2.5
+  google_nav_bar: ^5.0.6
+  http: ^0.13.5
   image_picker: ^0.8.6
   lottie: ^2.0.0
   native_pdf_view: ^6.0.0+1
