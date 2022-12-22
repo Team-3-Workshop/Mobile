@@ -3,9 +3,10 @@
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/page/profile.dart';
-import 'package:ui_tnbts/page/tutorial.dart';
-import 'package:ui_tnbts/pages/payments.dart';
+import 'Page/home_page.dart';
+import 'Page/profile2.dart';
+import 'Page/sop.dart';
+import 'Page/tutorial.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -17,14 +18,11 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   int currentTab = 0;
   final List<Widget> screens = [
-    Text('home'),
-    Text('sop'),
-    Text('hahahahha'),
+    HomePage(),
+    sop(),
+    Text('tutorial'),
     Tutorial(),
-    Profile(),
-    payments(),
-    Text('osas'),
-    Text('ossas'),
+    Profile2(),
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
@@ -38,7 +36,7 @@ class _ProfilePageState extends State<ProfilePage> {
       bottomNavigationBar: Container(
         color: Colors.grey[200],
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 7),
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 7),
           child: GNav(
             backgroundColor: Colors.grey.shade200,
             color: Colors.grey[500],
@@ -78,7 +76,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 text: 'Payments',
                 onPressed: () {
                   setState(() {
-                    currentTab = 2;
+                    currentTab = 3;
                   });
                 },
               ),
