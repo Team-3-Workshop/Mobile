@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ui_tnbts/pages/payments_detail.dart';
 import 'package:ui_tnbts/pages/payments_finished.dart';
 import 'package:ui_tnbts/pages/payments_ongoing.dart';
-import 'package:ui_tnbts/pages/payments_unpaid.dart';
+import 'package:ui_tnbts/pages/payments_methode.dart';
 
 class payments extends StatefulWidget {
   const payments({super.key});

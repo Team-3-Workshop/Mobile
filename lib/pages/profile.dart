@@ -1,0 +1,245 @@
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, unused_import, unnecessary_import
+
+// import 'dart:html';
+import 'dart:io';
+import 'dart:ui';
+import 'package:image_picker/image_picker.dart';
+import 'package:ui_tnbts/pages/edit_profile.dart';
+import 'package:ui_tnbts/pages/tutorial.dart';
+import 'package:ui_tnbts/pages/settings.dart';
+import 'package:flutter/material.dart';
+import 'package:ui_tnbts/pages/pdf_view.dart';
+
+class Profile extends StatefulWidget {
+  const Profile({super.key});
+
+  @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  File? image;
+
+  Future getImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? imagePicked =
+        await _picker.pickImage(source: ImageSource.gallery);
+    image = File(imagePicked!.path);
+    setState(() {});
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          color: Colors.white,
+          child: ListView(
+            children: <Widget>[
+              SizedBox(height: 55),
+              Row(
+                children: <Widget>[
+                  Column(
+                    children: [
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 1),
+                          child: Text('Dika   ',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 37,
+                                  color: Colors.black)),
+                        ),
+                      ),
+                      Container(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: TextButton(
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => EditProfile(
+                                            currentUserId: '',
+                                          )));
+                            },
+                            child: Text(
+                              'view and edit profile',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w300,
+                                  fontSize: 13,
+                                  color: Colors.black),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Stack(
+                    children: [
+                      image != null
+                          ? Container(
+                              // width: MediaQuery.of(context).size.width,
+                              width: 220,
+                              height: 100,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 120),
+                                child: ClipOval(
+                                  child: Image.file(
+                                    image!,
+                                    height: 96,
+                                    width: 96,
+                                    fit: BoxFit.cover,
+                                  ),
+                                  clipper: MyClip(),
+                                ),
+                              ))
+                          : Container(),
+                      // Padding(
+                      //   padding: const EdgeInsets.only(left: 125),
+                      //   child: CircleAvatar(
+                      //     backgroundImage:
+                      //         AssetImage('assets/images/profil.jpg'),
+                      //     radius: 45,
+                      //   ),
+                      // ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(148, 58, 0, 0),
+                        child: MaterialButton(
+                          onPressed: () async {
+                            await getImage();
+                          },
+                          color: Colors.blue,
+                          textColor: Colors.white,
+                          child: Icon(
+                            Icons.camera_alt,
+                            size: 16,
+                          ),
+                          padding: EdgeInsets.all(10),
+                          shape: CircleBorder(),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EditProfile(
+                                      currentUserId: '',
+                                    )));
+                      },
+                      child: Text(
+                        'Edit Profile                                 ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  Icon(Icons.person_search_rounded,
+                      size: 40.0, color: Colors.grey.shade400)
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const sop()));
+                      },
+                      child: Text(
+                        'Tutorial                                       ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  Icon(Icons.auto_stories,
+                      size: 40.0, color: Colors.grey.shade400)
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25),
+                    child: Text(
+                      'SOP',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                      padding: const EdgeInsets.only(left: 267),
+                      child: Icon(Icons.info,
+                          size: 40.0, color: Colors.grey.shade400)),
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 17),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const setting()));
+                      },
+                      child: Text(
+                        'Setting                                       ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  Icon(Icons.settings, size: 40.0, color: Colors.grey.shade400),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MyClip extends CustomClipper<Rect> {
+  Rect getClip(Size size) {
+    return Rect.fromLTWH(0, 0, 90, 90);
+  }
+
+  bool shouldReclip(oldClipper) {
+    return false;
+  }
+}

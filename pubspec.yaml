@@ -33,31 +33,10 @@ dependencies:
   flutter:
     sdk: flutter
   google_nav_bar: ^5.0.6
-  line_icons: ^2.0.1
-  pdf: ^3.8.4
-
-dev_dependencies:
-
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
-  flutter_test:
-    sdk: flutter
-
-  flutter_pdfview: ^1.2.5
-  google_nav_bar: ^5.0.6
   http: ^0.13.5
+  image_picker: ^0.8.6
   lottie: ^2.0.0
-  open_file: ^3.2.1
-  path: ^1.8.2
-  path_provider: ^2.0.11
-  pdf: ^3.8.4
-  printing: ^5.9.3
-  url_launcher: ^6.1.6
-
+  native_pdf_view: ^6.0.0+1
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
@@ -75,10 +54,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/storiatour.png
+    - assets/images/Logo-BCA_Biru.png
     - assets/images/bromoh.jpg
     - assets/images/justina.jpg
     - assets/images/ranu_kumbolo.jpg
+    - assets/images/profil.jpg
     - assets/images/payment-successful-unscreen.gif
+    - assets/pdf/BKPM.pdf
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

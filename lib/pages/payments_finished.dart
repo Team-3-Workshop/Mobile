@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_tnbts/pages/BottomBar.dart';
 
 class PaymentFinished extends StatefulWidget {
   const PaymentFinished({super.key});
@@ -14,7 +15,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
         title: Text(
-          'Pesanan selesai                         ',
+          'Checkout  ',
           style: TextStyle(color: Color(0xFF303030)),
         ),
         leading: IconButton(
@@ -121,7 +122,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                       style: TextStyle(color: Color(0xFF303030), fontSize: 13),
                     ),
                     Text(
-                      'SUMBER SARI, KAB. JEMBER, JAWA TIMUR, INA                                 ',
+                      'SUMBER SARI, KAB. JEMBER, JAWA TIMUR,WNI                                 ',
                       textAlign: TextAlign.left,
                       style: TextStyle(color: Color(0xFF303030), fontSize: 13),
                     ),
@@ -172,7 +173,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                                   height: 10,
                                 ),
                                 Text(
-                                  "Rp 700.000                                                                            X 5   ",
+                                  "Rp 700.000                                                                      X 5   ",
                                   style: TextStyle(
                                       color: Colors.grey[700], fontSize: 13),
                                 ),
@@ -266,22 +267,22 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                       height: 10,
                     ),
                     Text(
-                      'Subtotal untuk Product                                      Rp 200.000                                ',
+                      'Subtotal untuk Product                     Rp 200.000                                ',
                       textAlign: TextAlign.left,
                       style: TextStyle(color: Colors.grey[700], fontSize: 13),
                     ),
                     Text(
-                      'Subtotal untuk Transport                                   Rp 500.000                                ',
+                      'Subtotal untuk Transport                  Rp 500.000                                ',
                       textAlign: TextAlign.left,
                       style: TextStyle(color: Colors.grey[700], fontSize: 13),
                     ),
                     Text(
-                      'Total Diskon Pengirimaan                                      Rp 0.000                                ',
+                      'Total Diskon Pengirimaan                 Rp 0.000                                ',
                       textAlign: TextAlign.left,
                       style: TextStyle(color: Colors.grey[700], fontSize: 13),
                     ),
                     Text(
-                      'Total Diskon Transportasi                                      Rp 0.000                                ',
+                      'Total Diskon Transportasi                  Rp 0.000                                ',
                       textAlign: TextAlign.left,
                       style: TextStyle(color: Colors.grey[700], fontSize: 13),
                     ),
@@ -294,7 +295,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                               TextStyle(color: Color(0xFF303030), fontSize: 16),
                         ),
                         Text(
-                          '                            Rp 700.000',
+                          '                   Rp 700.000',
                           textAlign: TextAlign.left,
                           style:
                               TextStyle(color: Color(0xFF25BAC2), fontSize: 16),
@@ -323,10 +324,9 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                           child: Column(
                             children: [
                               Text(''),
+                              Text('                       Total pembayaran'),
                               Text(
-                                  '                              Total pembayaran'),
-                              Text(
-                                '                                 Rp 700.000',
+                                '                           Rp 700.000',
                                 style: TextStyle(
                                     color: Color(0xFF25BAC2), fontSize: 16),
                               )
@@ -340,12 +340,14 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                     width: 150,
                     height: 70,
                     child: OutlinedButton(
-                      onPressed: () => Navigator.of(context).pop(),
+                      onPressed: () => Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) => ProfilePage())),
                       style: OutlinedButton.styleFrom(
                         backgroundColor: Color(0xFF25BAC2), //<-- SEE HERE
                       ),
                       child: Text(
-                        '    Beli lagi    ',
+                        '    Buat pesanan    ',
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
@@ -357,6 +359,5 @@ class _PaymentFinishedState extends State<PaymentFinished> {
         ),
       ),
     );
-    ;
   }
 }
