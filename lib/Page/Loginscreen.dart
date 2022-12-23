@@ -5,10 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:login/BottomBar.dart';
 import 'package:login/Page/home_page.dart';
 import 'package:login/Page/register2.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../pages/BottomBar.dart';
 import 'Register.dart';
 import 'forgot_pw_page.dart';
 import 'package:http/http.dart' as http;
@@ -179,7 +179,7 @@ class _Loginscreenstate extends State<Loginscreen> {
     if (_passwordController.text.isNotEmpty &&
         _emailController.text.isNotEmpty) {
       var response = await http.post(
-          Uri.parse("http://192.168.18.200:3000/auth/login"),
+          Uri.parse("http://192.168.100.55:3000/auth/login"),
           body: ({
             'email': _emailController.text,
             'password': _passwordController.text

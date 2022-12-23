@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:login/BottomBar.dart';
 import 'package:login/Page/Loginscreen.dart';
 import 'package:login/Page/profile2.dart';
+import 'package:login/pages/BottomBar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Page/startup.dart';
 

@@ -4,11 +4,11 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:image_picker/image_picker.dart';
-import 'package:ui_tnbts/pages/edit_profile.dart';
-import 'package:ui_tnbts/pages/tutorial.dart';
-import 'package:ui_tnbts/pages/settings.dart';
+import 'package:login/pages/edit_profile.dart';
+import 'package:login/pages/tutorial.dart';
+import 'package:login/pages/settings.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/pdf_view.dart';
+import 'package:login/pages/pdf_view.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});

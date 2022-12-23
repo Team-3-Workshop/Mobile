@@ -3,9 +3,9 @@
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/profile.dart';
-import 'package:ui_tnbts/pages/tutorial.dart';
-import 'package:ui_tnbts/pages/payments.dart';
+import 'package:login/pages/profile.dart';
+import 'package:login/pages/tutorial.dart';
+import 'package:login/pages/payments.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);

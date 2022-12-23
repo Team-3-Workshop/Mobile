@@ -3,7 +3,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart' as http;
-import 'package:ui_tnbts/dump/model.dart';
+import 'package:login/dump/model.dart';
 
 class Repository {
   final _baseUrl =

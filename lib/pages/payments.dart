@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login/pages/payments_detail.dart';
 import 'package:login/pages/payments_finished.dart';
+import 'package:login/pages/payments_methode.dart';
 import 'package:login/pages/payments_ongoing.dart';
-import 'package:login/pages/payments_unpaid.dart';
 
 class payments extends StatefulWidget {
   const payments({super.key});

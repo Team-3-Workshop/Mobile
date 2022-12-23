@@ -247,10 +247,17 @@ packages:
   flutter_pdfview:
     dependency: transitive
     description:
-      name: flutter_plugin_android_lifecycle
+      name: flutter_pdfview
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.2.5"
+  flutter_plugin_android_lifecycle:
+    dependency: transitive
+    description:
+      name: flutter_plugin_android_lifecycle
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.7"
   flutter_spinkit:
     dependency: transitive
     description:
@@ -289,6 +296,41 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.2"
+  image_picker:
+    dependency: "direct main"
+    description:
+      name: image_picker
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.6"
+  image_picker_android:
+    dependency: transitive
+    description:
+      name: image_picker_android
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.5+4"
+  image_picker_for_web:
+    dependency: transitive
+    description:
+      name: image_picker_for_web
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.1.10"
+  image_picker_ios:
+    dependency: transitive
+    description:
+      name: image_picker_ios
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.8.6+3"
+  image_picker_platform_interface:
+    dependency: transitive
+    description:
+      name: image_picker_platform_interface
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.6.2"
   intl:
     dependency: transitive
     description:
@@ -299,7 +341,7 @@ packages:
   js:
     dependency: transitive
     description:
-      name: image_picker_platform_interface
+      name: js
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.4"
@@ -369,7 +411,7 @@ packages:
   path_provider_android:
     dependency: transitive
     description:
-      name: photo_view
+      name: path_provider_android
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.22"
@@ -626,14 +668,14 @@ packages:
   url_launcher_android:
     dependency: transitive
     description:
-      name: universal_platform
+      name: url_launcher_android
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.22"
   url_launcher_ios:
     dependency: transitive
     description:
-      name: uuid
+      name: url_launcher_ios
       url: "https://pub.dartlang.org"
     source: hosted
     version: "6.0.17"

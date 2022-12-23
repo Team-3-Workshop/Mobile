@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'dart:ui';
-import 'package:login/page/tutorial.dart';
+// import 'package:login/page/tutorial.dart';
 import 'package:flutter/material.dart';
+
+import '../Page/tutorial.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
