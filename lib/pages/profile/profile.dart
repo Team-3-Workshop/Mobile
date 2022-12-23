@@ -4,11 +4,11 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:image_picker/image_picker.dart';
-import 'package:ui_tnbts/pages/edit_profile.dart';
-import 'package:ui_tnbts/pages/tutorial.dart';
-import 'package:ui_tnbts/pages/settings.dart';
+import 'package:ui_tnbts/pages/profile/edit_profile.dart';
+import 'package:ui_tnbts/pages/profile/tutorial.dart';
+import 'package:ui_tnbts/pages/profile/settings.dart';
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/pdf_view.dart';
+import 'package:ui_tnbts/pages/profile/sop.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -77,13 +77,21 @@ class _ProfileState extends State<Profile> {
                   ),
                   Stack(
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.only(left: 125),
+                        child: CircleAvatar(
+                          backgroundImage:
+                              AssetImage('assets/images/profil.jpg'),
+                          radius: 45,
+                        ),
+                      ),
                       image != null
                           ? Container(
                               // width: MediaQuery.of(context).size.width,
                               width: 220,
                               height: 100,
                               child: Padding(
-                                padding: const EdgeInsets.only(left: 120),
+                                padding: const EdgeInsets.only(left: 125),
                                 child: ClipOval(
                                   child: Image.file(
                                     image!,
@@ -95,21 +103,13 @@ class _ProfileState extends State<Profile> {
                                 ),
                               ))
                           : Container(),
-                      // Padding(
-                      //   padding: const EdgeInsets.only(left: 125),
-                      //   child: CircleAvatar(
-                      //     backgroundImage:
-                      //         AssetImage('assets/images/profil.jpg'),
-                      //     radius: 45,
-                      //   ),
-                      // ),
                       Padding(
                         padding: const EdgeInsets.fromLTRB(148, 58, 0, 0),
                         child: MaterialButton(
                           onPressed: () async {
                             await getImage();
                           },
-                          color: Colors.blue,
+                          color: Color(0xFF25BAC2),
                           textColor: Colors.white,
                           child: Icon(
                             Icons.camera_alt,
@@ -160,12 +160,7 @@ class _ProfileState extends State<Profile> {
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const sop()));
-                      },
+                      onPressed: () {},
                       child: Text(
                         'Tutorial                                       ',
                         style: TextStyle(
@@ -185,17 +180,25 @@ class _ProfileState extends State<Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 25),
-                    child: Text(
-                      'SOP',
-                      style: TextStyle(
-                        fontWeight: FontWeight.w400,
-                        fontSize: 20,
+                    padding: const EdgeInsets.only(left: 18),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const sop()));
+                      },
+                      child: Text(
+                        'SOP      ',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color: Colors.black),
                       ),
                     ),
                   ),
                   Padding(
-                      padding: const EdgeInsets.only(left: 267),
+                      padding: const EdgeInsets.only(left: 222),
                       child: Icon(Icons.info,
                           size: 40.0, color: Colors.grey.shade400)),
                 ],

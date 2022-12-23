@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/api_profile.dart';
+import 'package:ui_tnbts/prototype/api_profile.dart';
 // import 'package:ui_tnbts/pages/calender.dart';
 // import 'package:ui_tnbts/pages/startup.dart';
 import 'package:ui_tnbts/pages/splash_screen.dart';

@@ -1,8 +1,8 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/dump/model.dart';
-import 'package:ui_tnbts/dump/repository.dart';
+import 'package:ui_tnbts/prototype/model.dart';
+import 'package:ui_tnbts/prototype/repository.dart';
 
 class EditProfile extends StatefulWidget {
   final String currentUserId;
