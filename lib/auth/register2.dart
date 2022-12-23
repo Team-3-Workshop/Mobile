@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:login/repository/repository.dart';
+import 'package:login/pages/home/repository/repository.dart'; //repository
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:login/zoom/bromoF3.dart';
-import 'package:login/zoom/bromoF5.dart';
-import 'package:login/zoom/bromoFI.dart';
-import 'package:login/zoom/bromoF2.dart';
+import 'package:login/pages/home/zoom/bromoF3.dart'; //bromoF3
+import 'package:login/pages/home/zoom/bromoF5.dart'; //bromoF5
+import 'package:login/pages/home/zoom/bromoFI.dart'; //bromoFI
+import 'package:login/pages/home/zoom/bromoF2.dart'; //bromoF2
+import 'package:login/pages/home/zoom/bromoF4.dart'; //bromoF4
 import 'package:native_pdf_view/native_pdf_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 import '../map_utils.dart';
 import 'package:login/imageLink/imageLink.dart';
-
-import '../zoom/bromoF4.dart';
 
 class photoView extends StatefulWidget {
   photoView({super.key});

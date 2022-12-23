@@ -5,11 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:login/Page/home_page.dart';
-import 'package:login/Page/register2.dart';
+import 'package:login/pages/home/home_page.dart'; //home_page
+import 'package:login/auth/register2.dart'; //register
 import 'package:shared_preferences/shared_preferences.dart';
-import '../pages/BottomBar.dart';
-import 'Register.dart';
+import '../BottomBar.dart';
 import 'forgot_pw_page.dart';
 import 'package:http/http.dart' as http;
 
@@ -192,7 +191,7 @@ class _Loginscreenstate extends State<Loginscreen> {
         await storage.setString('data', output['data']['email']);
         // ignore: use_build_context_synchronously
         Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (BuildContext ctx) => ProfilePage()));
+            MaterialPageRoute(builder: (BuildContext ctx) => BottomBar()));
         print(output['data']['email']);
       } else {
         EasyLoading.dismiss();

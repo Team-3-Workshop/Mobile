@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:login/imageLink/imageLink.dart';
-import 'package:login/zoom/ranuRegulo1.dart';
-import 'package:login/zoom/ranuRegulo2.dart';
-import 'package:login/zoom/ranuRegulo3.dart';
-import 'package:login/zoom/ranuRegulo4.dart';
-import 'package:login/zoom/ranuRegulo5.dart';
+import 'package:login/pages/home/zoom/ranuRegulo1.dart'; //RR1
+import 'package:login/pages/home/zoom/ranuRegulo2.dart'; //RR2
+import 'package:login/pages/home/zoom/ranuRegulo3.dart'; //RR3
+import 'package:login/pages/home/zoom/ranuRegulo4.dart'; //RR4
+import 'package:login/pages/home/zoom/ranuRegulo5.dart'; //RR5
 
 import '../map_utils.dart';
 

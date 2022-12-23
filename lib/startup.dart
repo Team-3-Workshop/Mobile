@@ -1,29 +1,17 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
-import 'package:login/pages/BottomBar.dart';
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
-class SplashScreen extends StatefulWidget {
-  static const nameRoute = "/splashscreen";
-  const SplashScreen({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+
+import 'BottomBar.dart';
+
+class StartUp extends StatefulWidget {
+  const StartUp({super.key});
 
   @override
-  State<SplashScreen> createState() => _SplashScreenState();
+  State<StartUp> createState() => _StartUpState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
-  @override
-  void initState() {
-    super.initState();
-    splashScreenStart();
-  }
-
-  splashScreenStart() async {
-    return Timer(const Duration(seconds: 5), () {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const ProfilePage()));
-    });
-  }
-
+class _StartUpState extends State<StartUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,8 +79,8 @@ class _SplashScreenState extends State<SplashScreen> {
               margin: EdgeInsets.all(15),
               child: ElevatedButton(
                 child: const Text('Get Started'),
-                onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => ProfilePage())),
+                onPressed: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => BottomBar())),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF25BAC2), shape: StadiumBorder()),
               ),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:login/imageLink/imageLink.dart';
-import 'package:login/zoom/ranuPane1.dart';
-import 'package:login/zoom/ranuPane2.dart';
-import 'package:login/zoom/ranuPane3.dart';
-import 'package:login/zoom/ranuPane4.dart';
-import 'package:login/zoom/ranuPane5.dart';
+import 'package:login/pages/home/zoom/ranuPane1.dart'; //RP1
+import 'package:login/pages/home/zoom/ranuPane2.dart'; //RP2
+import 'package:login/pages/home/zoom/ranuPane3.dart'; //RP3
+import 'package:login/pages/home/zoom/ranuPane4.dart'; //RP4
+import 'package:login/pages/home/zoom/ranuPane5.dart'; //RP5
 
 import '../map_utils.dart';
 

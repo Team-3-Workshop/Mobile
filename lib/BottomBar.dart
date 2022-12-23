@@ -3,29 +3,31 @@
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:login/pages/profile.dart';
-import 'package:login/pages/tutorial.dart';
-import 'package:login/pages/payments.dart';
+import 'package:login/pages/home/home_page.dart';
+import 'package:login/pages/profile/profile.dart';
+// import 'package:ui_tnbts/pages/profile/tutorial.dart';
+// import 'package:ui_tnbts/pages/payments/payments.dart';
+// import 'package:login/pages/profile.dart';
+// import 'package:login/pages/tutorial.dart';
+import 'package:login/pages/payments/payments.dart';
 
-class ProfilePage extends StatefulWidget {
-  const ProfilePage({Key? key}) : super(key: key);
+class BottomBar extends StatefulWidget {
+  const BottomBar({Key? key}) : super(key: key);
 
   @override
-  State<ProfilePage> createState() => _ProfilePageState();
+  State<BottomBar> createState() => _BottomBarState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _BottomBarState extends State<BottomBar> {
   int currentTab = 0;
   final List<Widget> screens = [
-    Text('home'),
+    HomePage(),
     payments(),
     Profile(),
-    Text('osas'),
-    Text('ossas'),
   ];
 
   final PageStorageBucket bucket = PageStorageBucket();
-  Widget currentScreen = ProfilePage();
+  Widget currentScreen = BottomBar();
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:login/imageLink/imageLink.dart';
-import 'package:login/zoom/semeru1.dart';
-import 'package:login/zoom/semeru2.dart';
-import 'package:login/zoom/semeru3.dart';
-import 'package:login/zoom/semeru4.dart';
-import 'package:login/zoom/semeru5.dart';
+import 'package:login/pages/home/zoom/semeru1.dart'; //Semeru1
+import 'package:login/pages/home/zoom/semeru2.dart'; //Semeru2
+import 'package:login/pages/home/zoom/semeru3.dart'; //Semeru3
+import 'package:login/pages/home/zoom/semeru4.dart'; //Semeru4
+import 'package:login/pages/home/zoom/semeru5.dart'; //Semeru5
 
 import '../map_utils.dart';
 

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:login/pages/payments_methode.dart';
+import 'package:login/BottomBar.dart';
 
-class PaymentDetail extends StatefulWidget {
-  const PaymentDetail({super.key});
+class PaymentFinished extends StatefulWidget {
+  const PaymentFinished({super.key});
 
   @override
-  State<PaymentDetail> createState() => _PaymentDetailState();
+  State<PaymentFinished> createState() => _PaymentFinishedState();
 }
 
-class _PaymentDetailState extends State<PaymentDetail> {
+class _PaymentFinishedState extends State<PaymentFinished> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -341,8 +341,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                     height: 70,
                     child: OutlinedButton(
                       onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => PaymentMethode())),
+                          MaterialPageRoute(builder: (context) => BottomBar())),
                       style: OutlinedButton.styleFrom(
                         backgroundColor: Color(0xFF25BAC2), //<-- SEE HERE
                       ),

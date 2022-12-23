@@ -1,8 +1,8 @@
 // import 'dart:html';
 
 import 'package:flutter/material.dart';
-import 'package:login/dump/model.dart';
-import 'package:login/dump/repository.dart';
+import 'package:login/prototype/model.dart'; //model
+import 'package:login/prototype/repository.dart'; //repository
 
 class EditProfile extends StatefulWidget {
   final String currentUserId;
@@ -399,17 +399,3 @@ class _EditProfileState extends State<EditProfile> {
         )));
   }
 }
-
-//       body: ListView.separated(
-//           itemBuilder: (context, index) {
-//             return Container(
-//               child: Text(listBlog[index].address),
-//             );
-//           },
-//           separatorBuilder: (context, index) {
-//             return Divider();
-//           },
-//           itemCount: listBlog.length),
-//     );
-//   }
-// }

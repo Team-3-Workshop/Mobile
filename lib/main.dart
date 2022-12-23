@@ -1,10 +1,14 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
+// import 'package:login/prototype/api_profile.dart';
+import 'package:login/splash_screen.dart';
+// import 'dart:io';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:login/Page/Loginscreen.dart';
-import 'package:login/Page/profile2.dart';
-import 'package:login/pages/BottomBar.dart';
+// import 'package:login/auth/Loginscreen.dart'; //D:\Kuliah\Dika\Semester 3\SIBO TNBTS\ui_tnbts\lib\auth\Loginscreen.dart
+// import 'package:login/auth/profile2.dart';
+import 'package:login/BottomBar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'Page/startup.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -13,7 +17,9 @@ void main() async {
   print(data);
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: data == null ? Loginscreen() : ProfilePage(),
+    home: data == null
+        ? const SplashScreen()
+        : const BottomBar(), //profile page itu bottombar
     builder: EasyLoading.init(),
   ));
   configLoading();
@@ -33,23 +39,4 @@ void configLoading() {
     ..maskColor = Colors.blue.withOpacity(0.5)
     ..userInteractions = true
     ..dismissOnTap = false;
-  // ..customAnimation = CustomAnimation();
 }
-
-// class login extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       theme: ThemeData(
-//         textButtonTheme: TextButtonThemeData(
-//           style: TextButton.styleFrom(
-//             primary: Colors.white,
-//           ),
-//         ),
-//       ),
-//       title: "login",
-//       debugShowCheckedModeBanner: false,
-//       home: StartUp(),
-//     );
-//   }
-// }

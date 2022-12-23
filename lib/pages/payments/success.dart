@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:lottie/lottie.dart';
 
-import 'BottomBar.dart';
+import 'package:login/BottomBar.dart';
 // import 'package:login/BottomBar.dart';
 
 class Success extends StatefulWidget {
@@ -63,7 +63,7 @@ class _SuccessState extends State<Success> {
                       primary: Color(0xFF25BAC2),
                     ),
                     onPressed: () => Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => ProfilePage())),
+                        MaterialPageRoute(builder: (context) => BottomBar())),
                     child: Text(
                       'OK',
                       style: TextStyle(fontSize: 20),
