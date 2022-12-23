@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:login/auth/Loginscreen.dart';
 
 import '../BottomBar.dart';
 
@@ -21,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
   splashScreenStart() async {
     return Timer(const Duration(seconds: 5), () {
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => const ProfilePage()));
+          MaterialPageRoute(builder: (context) => Loginscreen()));
     });
   }
 
@@ -93,7 +94,7 @@ class _SplashScreenState extends State<SplashScreen> {
               child: ElevatedButton(
                 child: const Text('Get Started'),
                 onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => ProfilePage())),
+                    MaterialPageRoute(builder: (context) => Loginscreen())),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF25BAC2), shape: StadiumBorder()),
               ),

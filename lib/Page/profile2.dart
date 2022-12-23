@@ -2,11 +2,13 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:login/Page/Loginscreen.dart';
-import 'package:login/Page/sop.dart';
+// import 'package:login/Page/Loginscreen.dart';
+// import 'package:login/Page/sop.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../pages/payments.dart';
+// import '../pages/payments.dart';
+import '../auth/Loginscreen.dart';
+import '../pages/profile/sop.dart';
 
 class Profile2 extends StatelessWidget {
   const Profile2({super.key});
@@ -173,26 +175,6 @@ class Profile2 extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext ctx) => Loginscreen()));
-                      // final logoutValue = await logout();
-                      // if (logoutValue == true) {
-                      //   Navigator.pushAndRemoveUntil(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => Loginscreen()),
-                      //     (Route<dynamic> route) => false,
-                      //   );
-                      // } else {
-                      //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      //       duration: Duration(seconds: 3),
-                      //       content: Text(
-                      //           "error with your id, please login again")));
-                      //   Navigator.pushAndRemoveUntil(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) => Loginscreen()),
-                      //     (Route<dynamic> route) => false,
-                      //   );
-                      // }
                     },
                     child: Padding(
                         padding: const EdgeInsets.only(left: 230),

@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, unused_import, deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:login/pages/success.dart';
+// import 'package:login/pages/success.dart';
 // import 'package:login/pages/payments_methode_transfer.dart';
 
 class PaymentMethode extends StatefulWidget {

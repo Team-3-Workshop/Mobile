@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:login/auth/Loginscreen.dart';
 
 import '../BottomBar.dart';
 
@@ -80,7 +81,7 @@ class _StartUpState extends State<StartUp> {
               child: ElevatedButton(
                 child: const Text('Get Started'),
                 onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => ProfilePage())),
+                    MaterialPageRoute(builder: (context) => Loginscreen())),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF25BAC2), shape: StadiumBorder()),
               ),
