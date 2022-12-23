@@ -118,7 +118,7 @@ class Profile2 extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return payments();
+                        return sop();
                       }));
                     },
                     child: Padding(

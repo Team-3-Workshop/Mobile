@@ -3,6 +3,7 @@
 
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:login/pages/payments.dart';
 import 'Page/home_page.dart';
 import 'Page/profile2.dart';
 import 'Page/sop.dart';
@@ -19,9 +20,7 @@ class _ProfilePageState extends State<ProfilePage> {
   int currentTab = 0;
   final List<Widget> screens = [
     HomePage(),
-    sop(),
-    Text('tutorial'),
-    Tutorial(),
+    payments(),
     Profile2(),
   ];
 
@@ -76,7 +75,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 text: 'Payments',
                 onPressed: () {
                   setState(() {
-                    currentTab = 3;
+                    currentTab = 1;
                   });
                 },
               ),
@@ -85,7 +84,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 text: 'Profile',
                 onPressed: () {
                   setState(() {
-                    currentTab = 4;
+                    currentTab = 2;
                   });
                 },
               ),
