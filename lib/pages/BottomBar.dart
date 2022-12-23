@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:ui_tnbts/pages/profile/profile.dart';
 import 'package:ui_tnbts/pages/profile/tutorial.dart';
 import 'package:ui_tnbts/pages/payments/payments.dart';
+import 'package:login/pages/profile.dart';
+import 'package:login/pages/tutorial.dart';
+import 'package:login/pages/payments.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);

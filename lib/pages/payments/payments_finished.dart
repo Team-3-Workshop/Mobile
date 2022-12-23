@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/BottomBar.dart';
+import 'package:login/pages/BottomBar.dart';
 
 class PaymentFinished extends StatefulWidget {
   const PaymentFinished({super.key});

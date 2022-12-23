@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-// import 'package:login/repository/repository.dart';
+import 'package:login/repository/repository.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -13,7 +13,7 @@ class register extends StatefulWidget {
 }
 
 class _registerState extends State<register> {
-  // Repository repository = Repository();
+  Repository repository = Repository();
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
   final _fullNameController = TextEditingController();

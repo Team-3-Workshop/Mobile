@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/BottomBar.dart';
+import 'package:login/pages/BottomBar.dart';
 
 class SplashScreen extends StatefulWidget {
   static const nameRoute = "/splashscreen";

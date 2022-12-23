@@ -1,4 +1,4 @@
-name: ui_tnbts
+name: login
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -20,7 +20,7 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.18.2 <3.0.0"
+  sdk: ">=2.18.0 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -29,14 +29,23 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  carousel_slider: ^4.1.1
   cupertino_icons: ^1.0.2
+  firebase_auth: ^4.1.1
   flutter:
     sdk: flutter
+  flutter_cached_pdfview: ^0.4.1
+  flutter_easyloading: ^3.0.5
   google_nav_bar: ^5.0.6
-  http: ^0.13.5
   image_picker: ^0.8.6
-  lottie: ^2.0.0
-  native_pdf_view: ^6.0.0+1
+  lottie: ^2.1.0
+  native_pdf_view: any
+  photo_view: any
+  provider: ^6.0.4
+  shared_preferences: ^2.0.15
+  smooth_page_indicator: ^1.0.0+2
+  url_launcher: ^6.1.7
+
 dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_test:
@@ -50,19 +59,12 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
-
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/storiatour.png
-    - assets/images/Logo-BCA_Biru.png
-    - assets/images/bromoh.jpg
-    - assets/images/justina.jpg
-    - assets/images/ranu_kumbolo.jpg
-    - assets/images/profil.jpg
-    - assets/images/payment-successful-unscreen.gif
-    # - assets/pdf/BKPM.pdf
-    - assets/pdf/sop.pdf
-  #   - images/a_dot_ham.jpeg
+    - assets/bromoh.jpg
+    - assets/logoo.jpg
+    - assets/pdf/pdf.pdf
+    - assets/justina.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
   # For details regarding adding assets from package dependencies, see
@@ -72,10 +74,10 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: KaushanScript
+      fonts:
+        - asset: assets\fonts\KaushanScript-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

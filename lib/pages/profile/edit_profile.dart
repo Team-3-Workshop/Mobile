@@ -399,17 +399,3 @@ class _EditProfileState extends State<EditProfile> {
         )));
   }
 }
-
-//       body: ListView.separated(
-//           itemBuilder: (context, index) {
-//             return Container(
-//               child: Text(listBlog[index].address),
-//             );
-//           },
-//           separatorBuilder: (context, index) {
-//             return Divider();
-//           },
-//           itemCount: listBlog.length),
-//     );
-//   }
-// }
