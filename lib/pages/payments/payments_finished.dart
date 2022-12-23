@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login/pages/BottomBar.dart';
+import 'package:login/BottomBar.dart';
 
 class PaymentFinished extends StatefulWidget {
   const PaymentFinished({super.key});
@@ -341,8 +341,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                     height: 70,
                     child: OutlinedButton(
                       onPressed: () => Navigator.of(context).push(
-                          MaterialPageRoute(
-                              builder: (context) => ProfilePage())),
+                          MaterialPageRoute(builder: (context) => BottomBar())),
                       style: OutlinedButton.styleFrom(
                         backgroundColor: Color(0xFF25BAC2), //<-- SEE HERE
                       ),

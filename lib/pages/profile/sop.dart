@@ -1,6 +1,6 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types
-
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
 import 'package:native_pdf_view/native_pdf_view.dart';
 
 class sop extends StatefulWidget {
@@ -12,7 +12,7 @@ class sop extends StatefulWidget {
 
 class _sopState extends State<sop> {
   final pdfController =
-      PdfController(document: PdfDocument.openAsset('assets/pdf/sop.pdf'));
+      PdfController(document: PdfDocument.openAsset('assets/pdf/pdf.pdf'));
   @override
   Widget build(BuildContext context) {
     return Scaffold(

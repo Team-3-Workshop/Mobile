@@ -1,8 +1,8 @@
 // ignore_for_file: prefer_const_constructors, unused_import, deprecated_member_use
 
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/payments/success.dart';
-import 'package:ui_tnbts/pages/payments/payments_methode_transfer.dart';
+import 'package:login/pages/payments/success.dart'; //success
+import 'package:login/pages/payments/payments_methode_transfer.dart'; //method transfer
 
 class PaymentMethode extends StatefulWidget {
   const PaymentMethode({super.key});

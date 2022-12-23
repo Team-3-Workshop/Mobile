@@ -11,7 +11,7 @@ import 'package:login/MorePage/RanuRegulo.dart';
 import 'package:login/MorePage/Semeru.dart';
 import 'package:login/MorePage/photoView.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../MorePage/RanuPane.dart';
+import '../../MorePage/RanuPane.dart';
 // import 'package:';
 
 class HomePage extends StatefulWidget {

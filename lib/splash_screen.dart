@@ -1,16 +1,29 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, sort_child_properties_last
-
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:login/Page/Loginscreen.dart';
+import 'package:login/BottomBar.dart';
 
-class StartUp extends StatefulWidget {
-  const StartUp({super.key});
+class SplashScreen extends StatefulWidget {
+  static const nameRoute = "/splashscreen";
+  const SplashScreen({Key? key}) : super(key: key);
 
   @override
-  State<StartUp> createState() => _StartUpState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _StartUpState extends State<StartUp> {
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    super.initState();
+    splashScreenStart();
+  }
+
+  splashScreenStart() async {
+    return Timer(const Duration(seconds: 5), () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const BottomBar()));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +34,14 @@ class _StartUpState extends State<StartUp> {
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/bromoh.jpg'), fit: BoxFit.cover),
+                image: AssetImage('assets/images/bromoh.jpg'),
+                fit: BoxFit.cover),
           ),
           child: ListView(children: [
             //logo
             SizedBox(height: 115),
             Image.asset(
-              'assets/logoo.jpg',
+              'assets/images/storiatour.png',
               height: 100,
               width: 100,
             ),
@@ -71,34 +85,14 @@ class _StartUpState extends State<StartUp> {
             ),
             //btn
             SizedBox(height: 260),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            //   child: Container(
-            //     padding: EdgeInsets.all(15),
-            //     decoration: BoxDecoration(
-            //         color: Color(0xFF25BAC2),
-            //         borderRadius: BorderRadius.circular(30)),
-            //     child: Center(
-            //       child: Text(
-            //         'Get Started',
-            //         style: TextStyle(color: Colors.white),
-            //       ),
-            //     ),
-            //   ),
-            // ),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               decoration: BoxDecoration(),
               margin: EdgeInsets.all(15),
               child: ElevatedButton(
                 child: const Text('Get Started'),
-                onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(builder: (context) => Loginscreen()),
-                    (Route<dynamic> route) => false,
-                  );
-                },
+                onPressed: () => Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => BottomBar())),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF25BAC2), shape: StadiumBorder()),
               ),

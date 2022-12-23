@@ -4,11 +4,11 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:image_picker/image_picker.dart';
-import 'package:ui_tnbts/pages/profile/edit_profile.dart';
-import 'package:ui_tnbts/pages/profile/tutorial.dart';
-import 'package:ui_tnbts/pages/profile/settings.dart';
+import 'package:login/pages/profile/edit_profile.dart'; //edit profile
+import 'package:login/pages/profile/tutorial.dart'; //tutorial
+import 'package:login/pages/profile/settings.dart'; //settings
 import 'package:flutter/material.dart';
-import 'package:ui_tnbts/pages/profile/sop.dart';
+import 'package:login/pages/profile/sop.dart'; //sop
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
