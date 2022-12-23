@@ -59,7 +59,7 @@ class _RanuPaneState extends State<RanuPane> {
 
           Container(
             child: DefaultTabController(
-                length: 3, // length of tabs
+                length: 2, // length of tabs
                 initialIndex: 0,
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
