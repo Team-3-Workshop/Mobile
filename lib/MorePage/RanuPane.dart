@@ -23,8 +23,8 @@ class _RanuPaneState extends State<RanuPane> {
         backgroundColor: Color(0xff25bac2),
         elevation: 10,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
