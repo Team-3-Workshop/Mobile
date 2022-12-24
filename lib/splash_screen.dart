@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:login/BottomBar.dart';
+import 'package:login/auth/Loginscreen.dart';
 
 class SplashScreen extends StatefulWidget {
   static const nameRoute = "/splashscreen";
@@ -20,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   splashScreenStart() async {
     return Timer(const Duration(seconds: 5), () {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const BottomBar()));
+          context, MaterialPageRoute(builder: (context) => BottomBar()));
     });
   }
 
