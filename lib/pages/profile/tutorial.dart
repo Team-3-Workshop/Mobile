@@ -1,58 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:native_pdf_view/native_pdf_view.dart';
 
-class Tutorial extends StatelessWidget {
+class Tutorial extends StatefulWidget {
   const Tutorial({super.key});
 
   @override
+  State<Tutorial> createState() => _TutorialState();
+}
+
+class _TutorialState extends State<Tutorial> {
+  final pdfController =
+      PdfController(document: PdfDocument.openAsset('assets/pdf/sop.pdf'));
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(children: <Widget>[
-        Container(
-          color: Colors.white, // Your screen background color
-        ),
-        SingleChildScrollView(
-            child: Column(children: <Widget>[
-          Container(height: 70.0),
-        ])),
-        new Positioned(
-          top: 0.0,
-          left: 0.0,
-          right: 0.0,
-          child: AppBar(
-            title: Text(''), // You can add title here
-            leading: new IconButton(
-              icon: new Icon(Icons.arrow_back_ios, color: Colors.grey.shade600),
-              onPressed: () => Navigator.pop(context),
-            ),
-            backgroundColor: Colors.white, //You can make this transparent
-            elevation: 0.0, //No shadow
-          ),
-        ),
-        Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(25, 100, 0, 0),
-              child: Container(
-                child: Text('How do i pay my',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 33,
-                    )),
-              ),
-            ),
-          ],
-        ),
-        Container(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(25, 140, 0, 0),
-            child: Text('reservation?',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 33,
-                )),
-          ),
-        )
-      ]),
+      appBar: AppBar(
+        title: Text("SOP"),
+      ),
+      body: Center(
+          child: PdfView(
+        controller: pdfController,
+      )),
     );
   }
 }

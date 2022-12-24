@@ -12,11 +12,12 @@ class sop extends StatefulWidget {
 
 class _sopState extends State<sop> {
   final pdfController =
-      PdfController(document: PdfDocument.openAsset('assets/pdf/pdf.pdf'));
+      PdfController(document: PdfDocument.openAsset('assets/pdf/sop.pdf'));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF25BAC2),
         title: Text("SOP"),
       ),
       body: Center(
