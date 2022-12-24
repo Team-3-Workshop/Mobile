@@ -4,12 +4,13 @@
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:login/pages/home/home_page.dart';
-import 'package:login/pages/profile/profile.dart';
-// import 'package:ui_tnbts/pages/profile/tutorial.dart';
-// import 'package:ui_tnbts/pages/payments/payments.dart';
-// import 'package:login/pages/profile.dart';
-// import 'package:login/pages/tutorial.dart';
+// import 'package:login/pages/payments.dart';
 import 'package:login/pages/payments/payments.dart';
+import 'package:login/pages/profile/profile.dart';
+// import 'Page/home_page.dart';
+import 'Page/profile2.dart';
+// import 'Page/sop.dart';
+// import 'Page/tutorial.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({Key? key}) : super(key: key);

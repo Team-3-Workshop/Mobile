@@ -2,7 +2,7 @@
     package="com.example.login">
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
    <application
-        android:label="login"
+        android:label="ui_tnbts"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

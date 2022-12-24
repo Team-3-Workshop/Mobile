@@ -4,11 +4,13 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:image_picker/image_picker.dart';
+import 'package:login/auth/Loginscreen.dart';
 import 'package:login/pages/profile/edit_profile.dart'; //edit profile
 import 'package:login/pages/profile/tutorial.dart'; //tutorial
 import 'package:login/pages/profile/settings.dart'; //settings
 import 'package:flutter/material.dart';
-import 'package:login/pages/profile/sop.dart'; //sop
+import 'package:login/pages/profile/sop.dart';
+import 'package:shared_preferences/shared_preferences.dart'; //sop
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -227,6 +229,35 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                   Icon(Icons.settings, size: 40.0, color: Colors.grey.shade400),
+                ],
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25),
+                    child: Text(
+                      'Logout',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () async {
+                      SharedPreferences storage =
+                          await SharedPreferences.getInstance();
+                      storage.remove('data');
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext ctx) => Loginscreen()));
+                    },
+                    child: Padding(
+                        padding: const EdgeInsets.only(left: 230),
+                        child: Icon(Icons.logout,
+                            size: 40.0, color: Colors.grey.shade400)),
+                  ),
                 ],
               ),
             ],

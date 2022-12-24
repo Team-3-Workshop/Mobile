@@ -1,7 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:login/BottomBar.dart';
 import 'package:login/auth/Loginscreen.dart';
+
+import '../BottomBar.dart';
 
 class SplashScreen extends StatefulWidget {
   static const nameRoute = "/splashscreen";
@@ -20,8 +21,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   splashScreenStart() async {
     return Timer(const Duration(seconds: 5), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Loginscreen()));
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => Loginscreen()));
     });
   }
 
@@ -92,8 +93,8 @@ class _SplashScreenState extends State<SplashScreen> {
               margin: EdgeInsets.all(15),
               child: ElevatedButton(
                 child: const Text('Get Started'),
-                onPressed: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => BottomBar())),
+                onPressed: () => Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => Loginscreen())),
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xFF25BAC2), shape: StadiumBorder()),
               ),
