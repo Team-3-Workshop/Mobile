@@ -5,7 +5,7 @@ import 'package:login/pages/payments/success.dart'; //success
 import 'package:login/pages/payments/payments_methode_transfer.dart'; //method transfer
 
 class PaymentMethode extends StatefulWidget {
-  const PaymentMethode({super.key});
+  // const PaymentMethode({super.key});
 
   @override
   State<PaymentMethode> createState() => _PaymentMethodeState();
@@ -15,15 +15,15 @@ class _PaymentMethodeState extends State<PaymentMethode> {
   int value = 0;
   final paymentLabels = [
     'Credit card / Debit Card',
-    // 'Coming Soon',
-    // 'Coming Soon',
-    // 'Coming Soon'
+    'Coming Soon',
+    'Coming Soon',
+    'Coming Soon'
   ];
   final paymentIcons = [
     Icons.credit_card,
-    // Icons.money_off,
-    // Icons.payment,
-    // Icons.account_balance_wallet,
+    Icons.money_off,
+    Icons.payment,
+    Icons.account_balance_wallet,
   ];
   @override
   Widget build(BuildContext context) {

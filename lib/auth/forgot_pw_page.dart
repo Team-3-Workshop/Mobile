@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
-  const ForgotPasswordPage({super.key});
+  // const ForgotPasswordPage({super.key});
 
   @override
   State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
@@ -12,32 +12,6 @@ class ForgotPasswordPage extends StatefulWidget {
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   final _emailController = TextEditingController();
-
-  @override
-  Future passwordReset() async {
-    try {
-      await FirebaseAuth.instance
-          .sendPasswordResetEmail(email: _emailController.text.trim());
-
-      showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              content:
-                  Text("password reset link sent , please check your email"),
-            );
-          });
-    } on FirebaseAuthException catch (e) {
-      print(e);
-      showDialog(
-          context: context,
-          builder: (context) {
-            return AlertDialog(
-              content: Text(e.message.toString()),
-            );
-          });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,7 +73,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
             height: 10,
           ),
           ElevatedButton(
-              onPressed: passwordReset,
+              onPressed: () {},
               style: ElevatedButton.styleFrom(
                   fixedSize: Size(240, 40),
                   shape: RoundedRectangleBorder(

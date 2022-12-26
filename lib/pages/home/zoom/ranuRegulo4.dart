@@ -6,7 +6,7 @@ import 'package:login/MorePage/Bromo.dart';
 import 'package:login/imageLink/imageLink.dart';
 
 class ranuRegulo4 extends StatelessWidget {
-  const ranuRegulo4({super.key});
+  // const ranuRegulo4({super.key});
 
   @override
   Widget build(BuildContext context) {

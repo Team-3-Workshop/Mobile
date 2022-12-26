@@ -11,7 +11,7 @@ import 'package:login/pages/home/zoom/ranuRegulo5.dart'; //RR5
 import '../map_utils.dart';
 
 class RanuRegulo extends StatefulWidget {
-  const RanuRegulo({super.key});
+  // const RanuRegulo({super.key});
 
   @override
   State<RanuRegulo> createState() => _RanuReguloState();

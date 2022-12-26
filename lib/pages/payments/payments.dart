@@ -5,7 +5,7 @@ import 'package:login/pages/payments/payments_ongoing.dart'; //payments ongoing
 import 'package:login/pages/payments/payments_methode.dart';
 
 class payments extends StatefulWidget {
-  const payments({super.key});
+  // const payments({super.key});
 
   @override
   State<payments> createState() => _paymentsState();

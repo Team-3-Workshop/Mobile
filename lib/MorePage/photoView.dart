@@ -10,7 +10,7 @@ import '../map_utils.dart';
 import 'package:login/imageLink/imageLink.dart';
 
 class photoView extends StatefulWidget {
-  photoView({super.key});
+  // photoView({super.key});
 
   @override
   State<photoView> createState() => _photoViewState();

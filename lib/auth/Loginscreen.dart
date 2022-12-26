@@ -173,12 +173,13 @@ class _Loginscreenstate extends State<Loginscreen> {
   }
 
   Future<void> auth() async {
+    FocusScope.of(context).unfocus();
     EasyLoading.show(status: 'loading...');
 
     if (_passwordController.text.isNotEmpty &&
         _emailController.text.isNotEmpty) {
       var response = await http.post(
-          Uri.parse("http://192.168.1.36:3000/auth/login"),
+          Uri.parse("http://192.168.0.143:3000/auth/login"),
           body: ({
             'email': _emailController.text,
             'password': _passwordController.text

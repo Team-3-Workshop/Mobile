@@ -13,7 +13,7 @@ import 'package:login/pages/profile/sop.dart';
 import 'package:shared_preferences/shared_preferences.dart'; //sop
 
 class Profile extends StatefulWidget {
-  const Profile({super.key});
+  // const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -193,10 +193,8 @@ class _ProfileState extends State<Profile> {
                     padding: const EdgeInsets.only(left: 15),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const sop()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => sop()));
                       },
                       child: Text(
                         'SOP',
@@ -223,10 +221,8 @@ class _ProfileState extends State<Profile> {
                     padding: const EdgeInsets.only(left: 15),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const setting()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => setting()));
                       },
                       child: Text(
                         'Setting',

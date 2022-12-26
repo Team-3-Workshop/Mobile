@@ -11,7 +11,7 @@ import 'package:login/pages/home/zoom/ranuKumbolo5.dart'; //RK5
 import '../map_utils.dart';
 
 class RanuKumbolo extends StatefulWidget {
-  const RanuKumbolo({super.key});
+  // const RanuKumbolo({super.key});
 
   @override
   State<RanuKumbolo> createState() => _RanuKumboloState();

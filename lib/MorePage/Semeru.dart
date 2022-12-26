@@ -9,7 +9,7 @@ import 'package:login/pages/home/zoom/semeru5.dart'; //Semeru5
 import '../map_utils.dart';
 
 class Semeru extends StatefulWidget {
-  const Semeru({super.key});
+  // const Semeru({super.key});
 
   @override
   State<Semeru> createState() => SemeruState();

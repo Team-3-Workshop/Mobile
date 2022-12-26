@@ -9,7 +9,7 @@ import 'package:login/pages/home/zoom/ranuPane5.dart'; //RP5
 import '../map_utils.dart';
 
 class RanuPane extends StatefulWidget {
-  const RanuPane({super.key});
+  // const RanuPane({super.key});
 
   @override
   State<RanuPane> createState() => _RanuPaneState();

@@ -10,7 +10,7 @@ import 'package:login/imageLink/imageLink.dart';
 //bromoF4
 
 class Bromo extends StatefulWidget {
-  const Bromo({super.key});
+  // const Bromo({super.key});
 
   @override
   State<Bromo> createState() => _BromoState();

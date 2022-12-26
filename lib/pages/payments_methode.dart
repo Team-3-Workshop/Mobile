@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 // import 'package:login/pages/payments_methode_transfer.dart';
 
 class PaymentMethode extends StatefulWidget {
-  const PaymentMethode({super.key});
+  // const PaymentMethode({super.key});
 
   @override
   State<PaymentMethode> createState() => _PaymentMethodeState();

@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:native_pdf_view/native_pdf_view.dart';
 
 class Tutorial extends StatefulWidget {
-  const Tutorial({super.key});
+  // const Tutorial({super.key});
 
   @override
   State<Tutorial> createState() => _TutorialState();

@@ -6,7 +6,7 @@ import 'package:login/auth/Loginscreen.dart';
 import '../BottomBar.dart';
 
 class StartUp extends StatefulWidget {
-  const StartUp({super.key});
+  // const StartUp({super.key});
 
   @override
   State<StartUp> createState() => _StartUpState();

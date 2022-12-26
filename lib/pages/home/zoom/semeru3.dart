@@ -6,7 +6,7 @@ import 'package:login/MorePage/Bromo.dart';
 import 'package:login/imageLink/imageLink.dart';
 
 class semeru3 extends StatelessWidget {
-  const semeru3({super.key});
+  // const semeru3({super.key});
 
   @override
   Widget build(BuildContext context) {
