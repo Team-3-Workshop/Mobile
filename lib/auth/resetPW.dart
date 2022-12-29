@@ -6,21 +6,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:login/auth/resetPW.dart';
+import 'package:login/auth/forgot_pw_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'forgot_pw_page.dart';
 
-class ForgotPasswordPage extends StatefulWidget {
-  // const ForgotPasswordPage({super.key});
+class resetPWPage extends StatefulWidget {
+  String id = "";
+  resetPWPage(this.id, {super.key});
 
   @override
-  State<ForgotPasswordPage> createState() => _ForgotPasswordPageState();
+  State<resetPWPage> createState() => _resetPWPageState();
 }
 
-class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
-  final _emailController = TextEditingController();
+class _resetPWPageState extends State<resetPWPage> {
+  final _password = TextEditingController();
+  var idFP = new ForgotPasswordPage();
+  // String id = idFP.
 
   @override
   Widget build(BuildContext context) {
+    print(widget.id);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xff25bac2),
@@ -32,7 +37,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Text(
-              "Enter your registered email",
+              "Enter your new password",
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
@@ -58,7 +63,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   ]),
               height: 60,
               child: TextField(
-                controller: _emailController,
+                controller: _password,
                 keyboardType: TextInputType.emailAddress,
                 style: TextStyle(
                   color: Colors.black87,
@@ -70,7 +75,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                       Icons.email,
                       color: Color(0xff7c94b6),
                     ),
-                    hintText: "Email",
+                    hintText: "password",
                     hintStyle: TextStyle(color: Colors.black38)),
               ),
             ),
@@ -80,7 +85,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           ElevatedButton(
               onPressed: () async {
-                emailCheck();
+                changePW();
               },
               style: ElevatedButton.styleFrom(
                   // fixedSize: Size(240, 40),
@@ -93,21 +98,19 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     );
   }
 
-  Future<void> emailCheck() async {
+  Future<void> changePW() async {
     EasyLoading.show(status: "loading..");
-    if (_emailController.text.isNotEmpty) {
+    if (_password.text.isNotEmpty) {
       var response = await http.post(
-          Uri.parse("http://192.168.92.236:3000/auth/forgot"),
-          body: ({'email': _emailController.text}));
+          Uri.parse("http://192.168.92.236:3000/auth/reset"),
+          body: ({'id': widget.id, 'password': _password.text}));
       final output1 = jsonDecode(response.body);
       if (response.statusCode == 200) {
         print(output1['data']['id']);
         EasyLoading.dismiss();
         ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Account Found..")));
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return resetPWPage(output1['data']['id']);
-        }));
+            .showSnackBar(SnackBar(content: Text(output1['message'])));
+        print(output1['message']);
       } else {
         EasyLoading.dismiss();
         print(output1['message']);

@@ -179,7 +179,7 @@ class _Loginscreenstate extends State<Loginscreen> {
     if (_passwordController.text.isNotEmpty &&
         _emailController.text.isNotEmpty) {
       var response = await http.post(
-          Uri.parse("http://192.168.0.143:3000/auth/login"),
+          Uri.parse("http://192.168.92.236:3000/auth/login"),
           body: ({
             'email': _emailController.text,
             'password': _passwordController.text
@@ -187,6 +187,7 @@ class _Loginscreenstate extends State<Loginscreen> {
       final output = jsonDecode(response.body);
       if (response.statusCode == 200) {
         EasyLoading.dismiss();
+        print(output['data']['id']);
         print("auth");
         SharedPreferences storage = await SharedPreferences.getInstance();
         await storage.setString('data', output['data']['email']);

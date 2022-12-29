@@ -559,7 +559,7 @@ class _register2State extends State<register2> {
     // var headers = {'Content-Type': 'application/x-www-form-urlencoded'};
     // // print(_dateController.text);
     var response =
-        await http.post(Uri.parse("http://192.168.1.36:3000/auth/signup"),
+        await http.post(Uri.parse("http://192.168.92.236:3000/auth/signup"),
             body: ({
               'firstName': _firstNameController.text,
               'lastName': _lastNameController.text,
