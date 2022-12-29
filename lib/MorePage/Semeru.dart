@@ -5,6 +5,8 @@ import 'package:login/pages/home/zoom/semeru2.dart'; //Semeru2
 import 'package:login/pages/home/zoom/semeru3.dart'; //Semeru3
 import 'package:login/pages/home/zoom/semeru4.dart'; //Semeru4
 import 'package:login/pages/home/zoom/semeru5.dart'; //Semeru5
+import 'package:native_pdf_view/native_pdf_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 import '../map_utils.dart';
 
@@ -16,6 +18,13 @@ class Semeru extends StatefulWidget {
 }
 
 class SemeruState extends State<Semeru> {
+  final imageList = [
+    "https://iili.io/HftAaYG.jpg",
+    "https://iili.io/HftA54n.jpg",
+    "https://iili.io/HftAY2s.jpg",
+    "https://iili.io/HftAcvf.jpg",
+    "https://iili.io/HftAlp4.jpg",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -81,145 +90,37 @@ class SemeruState extends State<Semeru> {
                                   top: BorderSide(
                                       color: Colors.grey, width: 0.5))),
                           child: TabBarView(children: <Widget>[
-                            Container(
-                              height: double.infinity,
-                              alignment: Alignment.topCenter,
-                              child: ListView(
-                                children: [
-                                  SizedBox(
-                                    height: 25,
+                            PhotoViewGallery.builder(
+                              itemCount: imageList.length,
+                              builder: (context, index) {
+                                return PhotoViewGalleryPageOptions(
+                                  imageProvider: NetworkImage(
+                                    imageList[index],
                                   ),
-                                  Center(
-                                    child: Wrap(
-                                      direction: Axis.horizontal,
-                                      // alignment: WrapAlignment.center,
-                                      spacing: 15.0,
-                                      // runAlignment:WrapAlignment.center,
-                                      runSpacing: 15.0,
-                                      // crossAxisAlignment: WrapCrossAlignment.center,
-                                      // textDirection: TextDirection.rtl,
-                                      // verticalDirection: VerticalDirection.up,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return semeru1();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "s1",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.semeru1),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return semeru2();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "s2",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.semeru2),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return semeru3();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "s3",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.semeru3),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return semeru4();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "s4",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.semeru4),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return semeru5();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "s5",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.semeru5),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                                  // Contained = the smallest possible size to fit one dimension of the screen
+                                  minScale:
+                                      PhotoViewComputedScale.contained * 1.0,
+                                  // Covered = the smallest possible size to fit the whole screen
+                                  maxScale: PhotoViewComputedScale.covered * 2,
+                                );
+                              },
+                              scrollPhysics: BouncingScrollPhysics(),
+                              // Set the background color to the "classic white"
+                              backgroundDecoration: BoxDecoration(
+                                color: Theme.of(context).canvasColor,
                               ),
+                              // loadingBuilder: (context, event) => Center(
+                              //   child: Container(
+                              //     width: 30.0,
+                              //     height: 30.0,
+                              //     child: CircularProgressIndicator(
+                              //       backgroundColor: Colors.orange,
+                              //       value: event == null
+                              //           ? 0
+                              //           : event.cumulativeBytesLoaded / event.expectedTotalBytes,
+                              //     ),
+                              //   ),
+                              // ),
                             ),
                             Center(
                               child: ElevatedButton.icon(

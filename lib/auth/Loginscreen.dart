@@ -114,7 +114,7 @@ class _Loginscreenstate extends State<Loginscreen> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 230, right: 20),
+              padding: const EdgeInsets.only(right: 4.8),
               child: TextButton(
                 child: Align(
                   alignment: Alignment.topRight,

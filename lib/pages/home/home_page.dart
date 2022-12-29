@@ -9,7 +9,6 @@ import 'package:login/MorePage/Bromo.dart';
 import 'package:login/MorePage/RanuKumbolo.dart';
 import 'package:login/MorePage/RanuRegulo.dart';
 import 'package:login/MorePage/Semeru.dart';
-import 'package:login/MorePage/photoView.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../MorePage/RanuPane.dart';
 // import 'package:';
@@ -305,60 +304,6 @@ class _HomePageState extends State<HomePage> {
                   //     ),
                   //   )
                   // ]),
-                  Stack(children: [
-                    Container(
-                      // margin: EdgeInsets.all(8.0),
-                      decoration: BoxDecoration(
-                        // borderRadius: BorderRadius.circular(10.0),
-                        image: DecorationImage(
-                          image: NetworkImage(
-                              "https://img.okezone.com/content/2022/11/09/519/2704343/gunung-semeru-kembali-erupsi-pvmbg-minta-masyarakat-jauhi-sungai-hindari-aliran-lahar-IgeXSgDoUA.jpg"),
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 430, left: 20),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          fixedSize: Size(150, 40),
-                          primary: Color(0xff25bac2),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
-                        ),
-                        onPressed: () {
-                          Navigator.push(context,
-                              MaterialPageRoute(builder: (context) {
-                            return photoView();
-                          }));
-                        },
-                        child: Text(
-                          "More",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 280, left: 20),
-                      child: Text(
-                        "photoView",
-                        style: TextStyle(
-                            fontSize: 25,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 310, left: 20),
-                      child: SizedBox(
-                        width: 200,
-                        child: Text(
-                          "photoView",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ),
-                    )
-                  ]),
                 ],
                 options: CarouselOptions(
                   autoPlayInterval: Duration(seconds: 5),

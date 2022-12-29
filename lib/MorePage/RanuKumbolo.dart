@@ -7,6 +7,8 @@ import 'package:login/pages/home/zoom/ranuKumbolo2.dart'; //RK2
 import 'package:login/pages/home/zoom/ranuKumbolo3.dart'; //RK3
 import 'package:login/pages/home/zoom/ranuKumbolo4.dart'; //RK4
 import 'package:login/pages/home/zoom/ranuKumbolo5.dart'; //RK5
+import 'package:native_pdf_view/native_pdf_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 import '../map_utils.dart';
 
@@ -18,6 +20,13 @@ class RanuKumbolo extends StatefulWidget {
 }
 
 class _RanuKumboloState extends State<RanuKumbolo> {
+  final imageList = [
+    "https://iili.io/HftoX4f.jpg",
+    "https://iili.io/Hftoj24.jpg",
+    "https://iili.io/HftowYl.jpg",
+    "https://iili.io/HftoOpS.jpg",
+    "https://iili.io/HftokT7.jpg",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,145 +92,37 @@ class _RanuKumboloState extends State<RanuKumbolo> {
                                   top: BorderSide(
                                       color: Colors.grey, width: 0.5))),
                           child: TabBarView(children: <Widget>[
-                            Container(
-                              height: double.infinity,
-                              alignment: Alignment.topCenter,
-                              child: ListView(
-                                children: [
-                                  SizedBox(
-                                    height: 25,
+                            PhotoViewGallery.builder(
+                              itemCount: imageList.length,
+                              builder: (context, index) {
+                                return PhotoViewGalleryPageOptions(
+                                  imageProvider: NetworkImage(
+                                    imageList[index],
                                   ),
-                                  Center(
-                                    child: Wrap(
-                                      direction: Axis.horizontal,
-                                      // alignment: WrapAlignment.center,
-                                      spacing: 15.0,
-                                      // runAlignment:WrapAlignment.center,
-                                      runSpacing: 15.0,
-                                      // crossAxisAlignment: WrapCrossAlignment.center,
-                                      // textDirection: TextDirection.rtl,
-                                      // verticalDirection: VerticalDirection.up,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuKumbolo1();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rk1",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuKumbolo1),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuKumbolo2();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rk2",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuKumbolo2),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuKumbolo3();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rk3",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuKumbolo3),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuKumbolo4();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rk4",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuKumbolo4),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuKumbolo5();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rk5",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuKumbolo5),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                                  // Contained = the smallest possible size to fit one dimension of the screen
+                                  minScale:
+                                      PhotoViewComputedScale.contained * 1.0,
+                                  // Covered = the smallest possible size to fit the whole screen
+                                  maxScale: PhotoViewComputedScale.covered * 2,
+                                );
+                              },
+                              scrollPhysics: BouncingScrollPhysics(),
+                              // Set the background color to the "classic white"
+                              backgroundDecoration: BoxDecoration(
+                                color: Theme.of(context).canvasColor,
                               ),
+                              // loadingBuilder: (context, event) => Center(
+                              //   child: Container(
+                              //     width: 30.0,
+                              //     height: 30.0,
+                              //     child: CircularProgressIndicator(
+                              //       backgroundColor: Colors.orange,
+                              //       value: event == null
+                              //           ? 0
+                              //           : event.cumulativeBytesLoaded / event.expectedTotalBytes,
+                              //     ),
+                              //   ),
+                              // ),
                             ),
                             Center(
                               child: ElevatedButton.icon(

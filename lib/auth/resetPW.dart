@@ -72,7 +72,7 @@ class _resetPWPageState extends State<resetPWPage> {
                     border: InputBorder.none,
                     contentPadding: EdgeInsets.only(top: 14),
                     prefixIcon: Icon(
-                      Icons.email,
+                      Icons.lock,
                       color: Color(0xff7c94b6),
                     ),
                     hintText: "password",
