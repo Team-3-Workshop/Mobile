@@ -7,7 +7,7 @@ import 'package:login/MorePage/Bromo.dart';
 import 'package:login/imageLink/imageLink.dart';
 
 class bromoF1 extends StatelessWidget {
-  const bromoF1({super.key});
+  // const bromoF1({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:login/pages/payments/payments_methode.dart'; //payments method
 
 class PaymentDetail extends StatefulWidget {
-  const PaymentDetail({super.key});
+  // const PaymentDetail({super.key});
 
   @override
   State<PaymentDetail> createState() => _PaymentDetailState();

@@ -13,7 +13,7 @@ import 'package:login/pages/profile/sop.dart';
 import 'package:shared_preferences/shared_preferences.dart'; //sop
 
 class Profile extends StatefulWidget {
-  const Profile({super.key});
+  // const Profile({super.key});
 
   @override
   State<Profile> createState() => _ProfileState();
@@ -142,7 +142,7 @@ class _ProfileState extends State<Profile> {
                                     )));
                       },
                       child: Text(
-                        'Edit Profile                                 ',
+                        'Edit Profile',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 20,
@@ -150,8 +150,12 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                   ),
-                  Icon(Icons.person_search_rounded,
-                      size: 40.0, color: Colors.grey.shade400)
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15.0),
+                    child: Icon(Icons.person_search_rounded,
+                        size: 40.0, color: Colors.grey.shade400),
+                  )
                 ],
               ),
               SizedBox(
@@ -164,7 +168,7 @@ class _ProfileState extends State<Profile> {
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
-                        'Tutorial                                       ',
+                        'Tutorial',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 20,
@@ -172,8 +176,12 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                   ),
-                  Icon(Icons.auto_stories,
-                      size: 40.0, color: Colors.grey.shade400)
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15.0),
+                    child: Icon(Icons.auto_stories,
+                        size: 40.0, color: Colors.grey.shade400),
+                  )
                 ],
               ),
               SizedBox(
@@ -182,16 +190,14 @@ class _ProfileState extends State<Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 18),
+                    padding: const EdgeInsets.only(left: 15),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const sop()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => sop()));
                       },
                       child: Text(
-                        'SOP      ',
+                        'SOP',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 20,
@@ -199,8 +205,9 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                   ),
+                  Spacer(),
                   Padding(
-                      padding: const EdgeInsets.only(left: 189),
+                      padding: const EdgeInsets.only(right: 15.0),
                       child: Icon(Icons.info,
                           size: 40.0, color: Colors.grey.shade400)),
                 ],
@@ -211,16 +218,14 @@ class _ProfileState extends State<Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 17),
+                    padding: const EdgeInsets.only(left: 15),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const setting()));
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => setting()));
                       },
                       child: Text(
-                        'Setting                                       ',
+                        'Setting',
                         style: TextStyle(
                             fontWeight: FontWeight.w400,
                             fontSize: 20,
@@ -228,8 +233,9 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                   ),
+                  Spacer(),
                   Padding(
-                    padding: const EdgeInsets.only(left: 4),
+                    padding: const EdgeInsets.only(right: 15.0),
                     child: Icon(Icons.settings,
                         size: 40.0, color: Colors.grey.shade400),
                   ),
@@ -241,7 +247,7 @@ class _ProfileState extends State<Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 25),
+                    padding: const EdgeInsets.only(left: 15.0),
                     child: Text(
                       'Logout',
                       style: TextStyle(
@@ -250,6 +256,7 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                   ),
+                  Spacer(),
                   GestureDetector(
                     onTap: () async {
                       SharedPreferences storage =
@@ -261,7 +268,7 @@ class _ProfileState extends State<Profile> {
                               builder: (BuildContext ctx) => Loginscreen()));
                     },
                     child: Padding(
-                        padding: const EdgeInsets.only(left: 214),
+                        padding: const EdgeInsets.only(right: 15),
                         child: Icon(Icons.logout,
                             size: 40.0, color: Colors.grey.shade400)),
                   ),

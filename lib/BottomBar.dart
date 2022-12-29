@@ -8,7 +8,6 @@ import 'package:login/pages/home/home_page.dart';
 import 'package:login/pages/payments/payments.dart';
 import 'package:login/pages/profile/profile.dart';
 // import 'Page/home_page.dart';
-import 'Page/profile2.dart';
 // import 'Page/sop.dart';
 // import 'Page/tutorial.dart';
 

@@ -4,28 +4,38 @@ import 'package:login/pages/home/zoom/bromoF5.dart'; //bromoF5
 import 'package:login/pages/home/zoom/bromoFI.dart'; //bromoFI
 import 'package:login/pages/home/zoom/bromoF2.dart'; //bromoF2
 import 'package:login/pages/home/zoom/bromoF4.dart'; //bromoF4
+import 'package:native_pdf_view/native_pdf_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 import '../map_utils.dart';
 import 'package:login/imageLink/imageLink.dart';
 
 //bromoF4
 
 class Bromo extends StatefulWidget {
-  const Bromo({super.key});
+  // const Bromo({super.key});
 
   @override
   State<Bromo> createState() => _BromoState();
 }
 
 class _BromoState extends State<Bromo> {
+  final imageList = [
+    "https://static.wixstatic.com/media/c9e873_acfcc859e596457aa55ada46180dde0c~mv2.jpeg",
+    "https://iili.io/HfkBOyF.jpg",
+    "https://iili.io/HfkBWEQ.jpg",
+    "https://cdn0-production-images-kly.akamaized.net/c6wfZfI1AxJVSNWSsnZLReRv9XQ=/1200x900/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3567172/original/006768600_1631244835-20210910-hampr-3-bulan-ditutup_-hari-ini-Bromo-dibuka-untuk-wisatawan-ARBAS-2.jpg",
+    "https://iili.io/HfkBVCx.jpg",
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Color(0xff25bac2),
         elevation: 10,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -82,145 +92,37 @@ class _BromoState extends State<Bromo> {
                                   top: BorderSide(
                                       color: Colors.grey, width: 0.5))),
                           child: TabBarView(children: <Widget>[
-                            Container(
-                              // height: 650,
-                              alignment: Alignment.topCenter,
-                              child: ListView(
-                                children: [
-                                  SizedBox(
-                                    height: 25,
+                            PhotoViewGallery.builder(
+                              itemCount: imageList.length,
+                              builder: (context, index) {
+                                return PhotoViewGalleryPageOptions(
+                                  imageProvider: NetworkImage(
+                                    imageList[index],
                                   ),
-                                  Center(
-                                    child: Wrap(
-                                      direction: Axis.horizontal,
-                                      // alignment: WrapAlignment.center,
-                                      spacing: 15.0,
-                                      // runAlignment:WrapAlignment.center,
-                                      runSpacing: 15.0,
-                                      // crossAxisAlignment: WrapCrossAlignment.center,
-                                      // textDirection: TextDirection.rtl,
-                                      // verticalDirection: VerticalDirection.up,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return bromoF1();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "f1",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.bromo1),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return bromoF2();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "f2",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.bromo2),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return bromoF3();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "f3",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.bromo3),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return bromoF4();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "f4",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.bromo4),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return bromoF5();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "f5",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.bromo5),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                                  // Contained = the smallest possible size to fit one dimension of the screen
+                                  minScale:
+                                      PhotoViewComputedScale.contained * 1.0,
+                                  // Covered = the smallest possible size to fit the whole screen
+                                  maxScale: PhotoViewComputedScale.covered * 2,
+                                );
+                              },
+                              scrollPhysics: BouncingScrollPhysics(),
+                              // Set the background color to the "classic white"
+                              backgroundDecoration: BoxDecoration(
+                                color: Theme.of(context).canvasColor,
                               ),
+                              // loadingBuilder: (context, event) => Center(
+                              //   child: Container(
+                              //     width: 30.0,
+                              //     height: 30.0,
+                              //     child: CircularProgressIndicator(
+                              //       backgroundColor: Colors.orange,
+                              //       value: event == null
+                              //           ? 0
+                              //           : event.cumulativeBytesLoaded / event.expectedTotalBytes,
+                              //     ),
+                              //   ),
+                              // ),
                             ),
                             Center(
                               child: ElevatedButton.icon(

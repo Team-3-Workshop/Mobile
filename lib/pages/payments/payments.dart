@@ -6,7 +6,7 @@ import 'package:login/pages/payments/payments_methode.dart';
 import 'package:login/prototype/counter.dart';
 
 class payments extends StatefulWidget {
-  const payments({super.key});
+  // const payments({super.key});
 
   @override
   State<payments> createState() => _paymentsState();

@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:native_pdf_view/native_pdf_view.dart';
 
 class sop extends StatefulWidget {
-  const sop({super.key});
+  // const sop({super.key});
 
   @override
   State<sop> createState() => _sopState();

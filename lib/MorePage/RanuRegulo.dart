@@ -7,17 +7,26 @@ import 'package:login/pages/home/zoom/ranuRegulo2.dart'; //RR2
 import 'package:login/pages/home/zoom/ranuRegulo3.dart'; //RR3
 import 'package:login/pages/home/zoom/ranuRegulo4.dart'; //RR4
 import 'package:login/pages/home/zoom/ranuRegulo5.dart'; //RR5
+import 'package:native_pdf_view/native_pdf_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 import '../map_utils.dart';
 
 class RanuRegulo extends StatefulWidget {
-  const RanuRegulo({super.key});
+  // const RanuRegulo({super.key});
 
   @override
   State<RanuRegulo> createState() => _RanuReguloState();
 }
 
 class _RanuReguloState extends State<RanuRegulo> {
+  final imageList = [
+    "https://iili.io/HfgpOCl.jpg",
+    "https://iili.io/HfgpwQ4.jpg",
+    "https://iili.io/Hfgpjjf.jpg",
+    "https://iili.io/HfgphTG.jpg",
+    "https://iili.io/HfgpWps.jpg"
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +34,8 @@ class _RanuReguloState extends State<RanuRegulo> {
         backgroundColor: Color(0xff25bac2),
         elevation: 10,
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
+        // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -83,140 +92,37 @@ class _RanuReguloState extends State<RanuRegulo> {
                                   top: BorderSide(
                                       color: Colors.grey, width: 0.5))),
                           child: TabBarView(children: <Widget>[
-                            Container(
-                              height: double.infinity,
-                              alignment: Alignment.topCenter,
-                              child: ListView(
-                                children: [
-                                  SizedBox(
-                                    height: 25,
+                            PhotoViewGallery.builder(
+                              itemCount: imageList.length,
+                              builder: (context, index) {
+                                return PhotoViewGalleryPageOptions(
+                                  imageProvider: NetworkImage(
+                                    imageList[index],
                                   ),
-                                  Center(
-                                    child: Wrap(
-                                      direction: Axis.horizontal,
-                                      spacing: 15.0,
-                                      runSpacing: 15.0,
-                                      children: [
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuRegulo1();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rr1",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuRegulo1),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuRegulo2();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rr2",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuRegulo2),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuRegulo3();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rr3",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuRegulo3),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuRegulo4();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rr4",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuRegulo4),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            Navigator.push(context,
-                                                MaterialPageRoute(
-                                                    builder: (context) {
-                                              return ranuRegulo5();
-                                            }));
-                                          },
-                                          child: Hero(
-                                            tag: "rr5",
-                                            child: Container(
-                                              height: 250,
-                                              width: 180,
-                                              decoration: BoxDecoration(
-                                                image: DecorationImage(
-                                                  image: NetworkImage(
-                                                      imgLink.ranuRegulo5),
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
+                                  // Contained = the smallest possible size to fit one dimension of the screen
+                                  minScale:
+                                      PhotoViewComputedScale.contained * 1.0,
+                                  // Covered = the smallest possible size to fit the whole screen
+                                  maxScale: PhotoViewComputedScale.covered * 2,
+                                );
+                              },
+                              scrollPhysics: BouncingScrollPhysics(),
+                              // Set the background color to the "classic white"
+                              backgroundDecoration: BoxDecoration(
+                                color: Theme.of(context).canvasColor,
                               ),
+                              // loadingBuilder: (context, event) => Center(
+                              //   child: Container(
+                              //     width: 30.0,
+                              //     height: 30.0,
+                              //     child: CircularProgressIndicator(
+                              //       backgroundColor: Colors.orange,
+                              //       value: event == null
+                              //           ? 0
+                              //           : event.cumulativeBytesLoaded / event.expectedTotalBytes,
+                              //     ),
+                              //   ),
+                              // ),
                             ),
                             Center(
                               child: ElevatedButton.icon(

@@ -86,18 +86,18 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             //btn
             SizedBox(height: 260),
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0),
-              decoration: BoxDecoration(),
-              margin: EdgeInsets.all(15),
-              child: ElevatedButton(
-                child: const Text('Get Started'),
-                onPressed: () => Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => BottomBar())),
-                style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF25BAC2), shape: StadiumBorder()),
-              ),
-            ),
+            // Container(
+            //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+            //   decoration: BoxDecoration(),
+            //   margin: EdgeInsets.all(15),
+            //   child: ElevatedButton(
+            //     child: const Text('Get Started'),
+            //     onPressed: () => Navigator.of(context)
+            //         .push(MaterialPageRoute(builder: (context) => BottomBar())),
+            //     style: ElevatedButton.styleFrom(
+            //         backgroundColor: Color(0xFF25BAC2), shape: StadiumBorder()),
+            //   ),
+            // ),
           ]),
         ),
       ),

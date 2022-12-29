@@ -7,7 +7,7 @@ import 'package:login/MorePage/Bromo.dart';
 import 'package:login/imageLink/imageLink.dart';
 
 class ranuPane4 extends StatelessWidget {
-  const ranuPane4({super.key});
+  // const ranuPane4({super.key});
 
   @override
   Widget build(BuildContext context) {
