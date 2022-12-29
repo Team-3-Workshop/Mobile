@@ -37,6 +37,7 @@ dependencies:
   flutter_cached_pdfview: ^0.4.1
   flutter_easyloading: ^3.0.5
   google_nav_bar: ^5.0.6
+  http: ^0.13.5
   image_picker: ^0.8.6
   lottie: ^2.1.0
   native_pdf_view: any

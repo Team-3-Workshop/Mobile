@@ -12,7 +12,7 @@ import 'package:login/MorePage/Semeru.dart';
 import 'package:login/MorePage/photoView.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../MorePage/RanuPane.dart';
-// import 'package:';
+import 'package:login/prototype/counter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -27,8 +27,15 @@ class _HomePageState extends State<HomePage> {
   var controller;
 
   final CarouselController _controller = CarouselController();
+  int _counter = 0;
+  final TextEditingController _counterController = TextEditingController();
 
   @override
+  void initState() {
+    _counterController.text = '$_counter';
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
@@ -430,21 +437,136 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                         ),
-                        Container(
-                            height: 100,
-                            width: 200,
-                            decoration: BoxDecoration(
-                              color: Color(0xff25bac2),
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            // color: Colors.blue,
-                            child: Center(
-                                child: Text(
-                              "Bromo",
-                              style: TextStyle(
-                                  fontFamily: 'KaushanScript', fontSize: 30),
-                              // textScaleFactor: 1.0,
-                            ))),
+                        InkWell(
+                          child: Container(
+                              height: 100,
+                              width: 200,
+                              decoration: BoxDecoration(
+                                color: Color(0xff25bac2),
+                                borderRadius: BorderRadius.circular(15),
+                              ),
+                              // color: Colors.blue,
+                              child: Center(
+                                  child: Text(
+                                "Bromo",
+                                style: TextStyle(
+                                    fontFamily: 'KaushanScript', fontSize: 30),
+                                // textScaleFactor: 1.0,
+                              ))),
+                          onTap: () {
+                            showModalBottomSheet(
+                                context: context,
+                                builder: (context) {
+                                  return Padding(
+                                    padding: EdgeInsets.only(
+                                        bottom: MediaQuery.of(context)
+                                            .viewInsets
+                                            .bottom),
+                                    child: Container(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal: 10, vertical: 10),
+                                      child: Center(
+                                        child: ListView(children: [
+                                          Column(
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 324),
+                                                child: TextButton.icon(
+                                                  onPressed: () =>
+                                                      Navigator.of(context)
+                                                          .pop(),
+                                                  icon: Icon(Icons.close,
+                                                      color: Colors.grey[700]),
+                                                  label: Text(''),
+                                                ),
+                                              ),
+                                              SizedBox(height: 10),
+                                              Row(
+                                                children: [
+                                                  SizedBox(width: 20),
+                                                  Image.asset(
+                                                    'assets/images/ranu_kumbolo.jpg',
+                                                    fit: BoxFit.cover,
+                                                    height: 160,
+                                                    width: 160,
+                                                  ),
+                                                  SizedBox(width: 40),
+                                                  Text(
+                                                    'Rp 700.000',
+                                                    style: TextStyle(
+                                                        color:
+                                                            Color(0xFF25BAC2),
+                                                        fontSize: 16),
+                                                  ),
+                                                ],
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: <Widget>[
+                                                  SizedBox(
+                                                    width: 30,
+                                                    height: 20,
+                                                    child: ElevatedButton(
+                                                      onPressed: () {
+                                                        setState(() {
+                                                          _counter--;
+                                                          _counterController
+                                                                  .text =
+                                                              '$_counter';
+                                                        });
+                                                      },
+                                                      child: Icon(
+                                                        Icons.remove,
+                                                        size: 13,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 20),
+                                                  Container(
+                                                    width: 40,
+                                                    child: TextField(
+                                                      decoration:
+                                                          InputDecoration(
+                                                        border:
+                                                            InputBorder.none,
+                                                      ),
+                                                      keyboardType:
+                                                          TextInputType.number,
+                                                      textAlign:
+                                                          TextAlign.center,
+                                                      controller:
+                                                          _counterController,
+                                                    ),
+                                                  ),
+                                                  SizedBox(height: 20),
+                                                  ElevatedButton(
+                                                    onPressed: () {
+                                                      setState(() {
+                                                        _counter++;
+                                                        _counterController
+                                                            .text = '$_counter';
+                                                      });
+                                                    },
+                                                    child: Icon(
+                                                      Icons.add,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ]),
+                                      ),
+                                    ),
+                                  );
+                                });
+                          },
+                          // Navigator.of(context).push(
+                          //     MaterialPageRoute(
+                          //         builder: (context) => MyHomePage())),
+                        ),
                       ],
                     ),
                   ),

@@ -1,6 +1,9 @@
 // import 'dart:html';
 
+// ignore_for_file: unnecessary_null_comparison
+
 import 'package:flutter/material.dart';
+import 'package:login/pages/profile/models/http_edit_profile.dart';
 import 'package:login/prototype/model.dart'; //model
 import 'package:login/prototype/repository.dart'; //repository
 
@@ -65,6 +68,16 @@ class _EditProfileState extends State<EditProfile> {
   //     SnackBar snackBar = SnackBar(content: Text("Profile updated!"));
   //   }
   // }
+  HttpEditProfile dataResponse = HttpEditProfile(
+      address: 'Data not found',
+      citizen: 'Data not found',
+      date: 'Data not found',
+      firstName: 'Data not found',
+      id: 'Data not found',
+      fullName: 'Data not found',
+      nik: 'Data not found',
+      phone: 'Data not found');
+
   List<User> listUser = [];
   Repository repository = Repository();
 
@@ -80,6 +93,33 @@ class _EditProfileState extends State<EditProfile> {
   }
 
   Widget build(BuildContext context) {
+    final responseDisplayName = TextEditingController(
+      text: (dataResponse.firstName == null)
+          ? 'Data not found'
+          : dataResponse.firstName,
+    );
+    final responseFullName = TextEditingController(
+      text: (dataResponse.fullName == null)
+          ? 'Data not found'
+          : dataResponse.fullName,
+    );
+    final responseCitizen = TextEditingController(
+      text: (dataResponse.citizen == null)
+          ? 'Data not found'
+          : dataResponse.citizen,
+    );
+    final responseNIK = TextEditingController(
+      text: (dataResponse.nik == null) ? 'Data not found' : dataResponse.nik,
+    );
+    final responseAddress = TextEditingController(
+      text: (dataResponse.address == null)
+          ? 'Data not found'
+          : dataResponse.address,
+    );
+    final responsePhone = TextEditingController(
+      text:
+          (dataResponse.phone == null) ? 'Data not found' : dataResponse.phone,
+    );
     return Scaffold(
         appBar: AppBar(
           leading: IconButton(
@@ -126,17 +166,20 @@ class _EditProfileState extends State<EditProfile> {
                   child: Column(
                     children: [
                       Column(
-                        children: const [
+                        children: [
                           Padding(
-                            padding: EdgeInsets.only(right: 246),
-                            child: Text("Display Name"),
+                            padding: EdgeInsets.only(right: 260),
+                            child: Text(
+                              "First Name",
+                            ),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              controller: responseDisplayName,
                               decoration: InputDecoration(
                                 border: UnderlineInputBorder(),
-                                hintText: 'Display Name',
+                                hintText: 'Input your first name here',
                               ),
                             ),
                           ),
@@ -144,17 +187,18 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                       SizedBox(height: 20),
                       Column(
-                        children: const [
+                        children: [
                           Padding(
-                            padding: EdgeInsets.only(right: 261),
+                            padding: EdgeInsets.only(right: 270),
                             child: Text("Full Name"),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              controller: responseFullName,
                               decoration: InputDecoration(
                                 border: UnderlineInputBorder(),
-                                hintText: 'Full Name',
+                                hintText: 'Input your full name here',
                               ),
                             ),
                           ),
@@ -162,17 +206,18 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                       SizedBox(height: 20),
                       Column(
-                        children: const [
+                        children: [
                           Padding(
-                            padding: EdgeInsets.only(right: 287),
+                            padding: EdgeInsets.only(right: 290),
                             child: Text("Citizen"),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              controller: responseCitizen,
                               decoration: InputDecoration(
                                 border: UnderlineInputBorder(),
-                                hintText: 'Citizen',
+                                hintText: 'Input your citizen here (WNA/WNI)',
                               ),
                             ),
                           ),
@@ -180,7 +225,7 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                       SizedBox(height: 20),
                       Column(
-                        children: const [
+                        children: [
                           Padding(
                             padding: EdgeInsets.only(right: 310),
                             child: Text("NIK"),
@@ -188,9 +233,10 @@ class _EditProfileState extends State<EditProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              controller: responseNIK,
                               decoration: InputDecoration(
                                 border: UnderlineInputBorder(),
-                                hintText: 'NIK',
+                                hintText: 'Input your NIK here',
                               ),
                             ),
                           ),
@@ -198,7 +244,7 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                       SizedBox(height: 20),
                       Column(
-                        children: const [
+                        children: [
                           Padding(
                             padding: EdgeInsets.only(right: 280),
                             child: Text("Address"),
@@ -206,9 +252,10 @@ class _EditProfileState extends State<EditProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              controller: responseAddress,
                               decoration: InputDecoration(
                                 border: UnderlineInputBorder(),
-                                hintText: 'Address',
+                                hintText: 'Input your address here',
                               ),
                             ),
                           ),
@@ -216,27 +263,36 @@ class _EditProfileState extends State<EditProfile> {
                       ),
                       SizedBox(height: 20),
                       Column(
-                        children: const [
+                        children: [
                           Padding(
-                            padding: EdgeInsets.only(right: 238),
-                            child: Text("Phone Number"),
+                            padding: EdgeInsets.only(right: 290),
+                            child: Text("Phone"),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              controller: responsePhone,
                               decoration: InputDecoration(
                                 border: UnderlineInputBorder(),
-                                hintText: 'Phone Number',
+                                hintText: 'Input your phone number here',
                               ),
                             ),
                           ),
                         ],
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 50,
                       ),
                       ElevatedButton(
-                          onPressed: () {}, //ini lom diisi bg
+                          onPressed: () {
+                            HttpEditProfile.connectAPI(
+                                    '69ea6e5b-b858-4dd3-beda-f188f4c74c36')
+                                .then((value) {
+                              setState(() {
+                                dataResponse = value;
+                              });
+                            });
+                          }, //ini lom diisi bg
                           child: Text(
                             "Update Profile",
                             style: TextStyle(
@@ -251,150 +307,8 @@ class _EditProfileState extends State<EditProfile> {
                     ],
                   ),
                 ),
-                // ListView.separated(
-                //     itemBuilder: (context, index) {
-                //       return Container(
-                //         child: Text(listUser[index].data),
-                //       );
-                //     },
-                //     separatorBuilder: (context, index) {
-                //       return Divider();
-                //     },
-                //     itemCount: listUser.length)
               ],
             ),
-            // Container(
-            //   child: ListView(
-            //     children: <Widget>[
-            //       Column(
-            //         children: [
-            //           SizedBox(height: 55),
-            //           Container(
-            //             child: Padding(
-            //               padding: const EdgeInsets.only(left: 1),
-            //               child: Text('Edit Profile',
-            //                   style: TextStyle(
-            //                       fontWeight: FontWeight.bold,
-            //                       fontSize: 37,
-            //                       color: Colors.black)),
-            //             ),
-            //           ),
-            //           SizedBox(
-            //             height: 10,
-            //           ),
-            //           Padding(
-            //             padding: const EdgeInsets.all(10),
-            //             child: CircleAvatar(
-            //               backgroundImage:
-            //                   AssetImage('assets/images/justina.jpg'),
-            //               radius: 45,
-            //             ),
-            //           ),
-            //           SizedBox(
-            //             height: 10,
-            //           ),
-            //           Container(
-            //             child: Row(
-            //               children: [
-            //                 Padding(
-            //                   padding: const EdgeInsets.only(left: 1),
-            //                   child: Text('Username',
-            //                       style: TextStyle(color: Colors.grey[300])),
-            //                 ),
-            //                 const TextField(
-            //                   obscureText: true,
-            //                   decoration: InputDecoration(
-            //                     labelText: 'Username',
-            //                   ),
-            //                 )
-            //               ],
-            //             ),
-            //           ),
-            //           SizedBox(
-            //             height: 10,
-            //           ),
-            //           Container(
-            //             child: Row(
-            //               children: [
-            //                 Padding(
-            //                   padding: const EdgeInsets.only(left: 1),
-            //                   child: Text('Email',
-            //                       style: TextStyle(color: Colors.grey[300])),
-            //                 ),
-            //                 const TextField(
-            //                   obscureText: true,
-            //                   decoration: InputDecoration(
-            //                     labelText: 'Email',
-            //                   ),
-            //                 )
-            //               ],
-            //             ),
-            //           ),
-            //           SizedBox(
-            //             height: 10,
-            //           ),
-            //           Container(
-            //             child: Row(
-            //               children: [
-            //                 Padding(
-            //                   padding: const EdgeInsets.only(left: 1),
-            //                   child: Text('Password',
-            //                       style: TextStyle(color: Colors.grey[300])),
-            //                 ),
-            //                 const TextField(
-            //                   obscureText: true,
-            //                   decoration: InputDecoration(
-            //                     labelText: 'Password',
-            //                   ),
-            //                 )
-            //               ],
-            //             ),
-            //           ),
-            //           SizedBox(
-            //             height: 10,
-            //           ),
-            //           Container(
-            //             child: Row(
-            //               children: [
-            //                 Padding(
-            //                   padding: const EdgeInsets.only(left: 1),
-            //                   child: Text('NIK',
-            //                       style: TextStyle(color: Colors.grey[300])),
-            //                 ),
-            //                 const TextField(
-            //                   obscureText: true,
-            //                   decoration: InputDecoration(
-            //                     labelText: 'NIK',
-            //                   ),
-            //                 )
-            //               ],
-            //             ),
-            //           ),
-            //           SizedBox(
-            //             height: 10,
-            //           ),
-            //           Container(
-            //             child: Row(
-            //               children: [
-            //                 Padding(
-            //                   padding: const EdgeInsets.only(left: 1),
-            //                   child: Text('Address',
-            //                       style: TextStyle(color: Colors.grey[300])),
-            //                 ),
-            //                 const TextField(
-            //                   obscureText: true,
-            //                   decoration: InputDecoration(
-            //                     labelText: 'Address',
-            //                   ),
-            //                 )
-            //               ],
-            //             ),
-            //           ),
-            //         ],
-            //       )
-            //     ],
-            //   ),
-            // ),
           ],
         )));
   }

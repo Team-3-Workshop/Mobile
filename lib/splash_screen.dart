@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   splashScreenStart() async {
     return Timer(const Duration(seconds: 5), () {
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => Loginscreen()));
+          context, MaterialPageRoute(builder: (context) => BottomBar()));
     });
   }
 

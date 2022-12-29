@@ -8,7 +8,7 @@ class ProfileApi extends StatelessWidget {
   Future<Map<String, dynamic>> ambilData() async {
     try {
       var hasilGet = await http.get(Uri.parse(
-          'http://192.168.100.61:3000/api/users/57836d87-42ac-4fcd-abd4-bed09ee6cb90'));
+          'http://192.168.0.106:3000/api/users/57836d87-42ac-4fcd-abd4-bed09ee6cb90'));
 
       if (hasilGet.statusCode >= 200 && hasilGet.statusCode < 300) {
         var data = json.decode(hasilGet.body)["data"] as Map<String, dynamic>;

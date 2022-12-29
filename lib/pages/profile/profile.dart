@@ -200,7 +200,7 @@ class _ProfileState extends State<Profile> {
                     ),
                   ),
                   Padding(
-                      padding: const EdgeInsets.only(left: 222),
+                      padding: const EdgeInsets.only(left: 189),
                       child: Icon(Icons.info,
                           size: 40.0, color: Colors.grey.shade400)),
                 ],
@@ -228,8 +228,15 @@ class _ProfileState extends State<Profile> {
                       ),
                     ),
                   ),
-                  Icon(Icons.settings, size: 40.0, color: Colors.grey.shade400),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 4),
+                    child: Icon(Icons.settings,
+                        size: 40.0, color: Colors.grey.shade400),
+                  ),
                 ],
+              ),
+              SizedBox(
+                height: 40,
               ),
               Row(
                 children: [
@@ -254,7 +261,7 @@ class _ProfileState extends State<Profile> {
                               builder: (BuildContext ctx) => Loginscreen()));
                     },
                     child: Padding(
-                        padding: const EdgeInsets.only(left: 230),
+                        padding: const EdgeInsets.only(left: 214),
                         child: Icon(Icons.logout,
                             size: 40.0, color: Colors.grey.shade400)),
                   ),
