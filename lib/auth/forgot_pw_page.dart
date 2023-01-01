@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:login/auth/resetPW.dart';
+import 'package:login/authrepository/authrepository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -18,6 +19,8 @@ class ForgotPasswordPage extends StatefulWidget {
 
 class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   final _emailController = TextEditingController();
+  authrepository repository = authrepository();
+  String id = "";
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +83,21 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
           ElevatedButton(
               onPressed: () async {
-                emailCheck();
+                // emailCheck();
+                EasyLoading.show(status: "loading..");
+                FocusScope.of(context).unfocus();
+                bool response =
+                    await repository.forgotPW(_emailController.text);
+                if (response) {
+                  EasyLoading.dismiss();
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return resetPWPage();
+                  }));
+                } else {
+                  EasyLoading.dismiss();
+                  ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text(repository.forgotPWMessage)));
+                }
               },
               style: ElevatedButton.styleFrom(
                   // fixedSize: Size(240, 40),
@@ -93,31 +110,31 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     );
   }
 
-  Future<void> emailCheck() async {
-    EasyLoading.show(status: "loading..");
-    if (_emailController.text.isNotEmpty) {
-      var response = await http.post(
-          Uri.parse("http://192.168.92.236:3000/auth/forgot"),
-          body: ({'email': _emailController.text}));
-      final output1 = jsonDecode(response.body);
-      if (response.statusCode == 200) {
-        print(output1['data']['id']);
-        EasyLoading.dismiss();
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text("Account Found..")));
-        Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return resetPWPage(output1['data']['id']);
-        }));
-      } else {
-        EasyLoading.dismiss();
-        print(output1['message']);
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(output1['message'])));
-      }
-    } else {
-      EasyLoading.dismiss();
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text("Blank Field Not Allowed..!")));
-    }
-  }
+  // Future<void> emailCheck() async {
+  //   EasyLoading.show(status: "loading..");
+  //   if (_emailController.text.isNotEmpty) {
+  //     var response = await http.post(
+  //         Uri.parse("http://192.168.252.236:3000/auth/forgot"),
+  //         body: ({'email': _emailController.text}));
+  //     final output1 = jsonDecode(response.body);
+  //     if (response.statusCode == 200) {
+  //       print(output1['data']['id']);
+  //       EasyLoading.dismiss();
+  //       ScaffoldMessenger.of(context)
+  //           .showSnackBar(SnackBar(content: Text("Account Found..")));
+  //       Navigator.push(context, MaterialPageRoute(builder: (context) {
+  //         return resetPWPage(output1['data']['id']);
+  //       }));
+  //     } else {
+  //       EasyLoading.dismiss();
+  //       print(output1['message']);
+  //       ScaffoldMessenger.of(context)
+  //           .showSnackBar(SnackBar(content: Text(output1['message'])));
+  //     }
+  //   } else {
+  //     EasyLoading.dismiss();
+  //     ScaffoldMessenger.of(context)
+  //         .showSnackBar(SnackBar(content: Text("Blank Field Not Allowed..!")));
+  //   }
+  // }
 }

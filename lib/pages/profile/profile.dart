@@ -266,6 +266,7 @@ class _ProfileState extends State<Profile> {
                           context,
                           MaterialPageRoute(
                               builder: (BuildContext ctx) => Loginscreen()));
+                      print("log out");
                     },
                     child: Padding(
                         padding: const EdgeInsets.only(right: 15),
