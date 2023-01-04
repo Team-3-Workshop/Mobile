@@ -1,6 +1,6 @@
 // import 'dart:html';
 
-// ignore_for_file: unnecessary_null_comparison
+// ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, avoid_unnecessary_containers, use_key_in_widget_constructors, avoid_print, annotate_overrides
 
 import 'package:flutter/material.dart';
 import 'package:login/pages/profile/models/http_edit_profile.dart';
@@ -17,66 +17,14 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
-  // TextEditingController successController = TextEditingController();
-  // TextEditingController messageController = TextEditingController();
-  // TextEditingController dataController = TextEditingController();
-  // bool isLoading = false;
-  // late User user;
-  // bool _successValid = true;
-  // bool _messageValid = true;
-  // bool _dataValid = true;
-
-  // @override
-  // getUser() async {
-  //   setState(() {
-  //     isLoading = true;
-  //   });
-  //   DocumentSnapshot doc = usersRef.document(widget.currentUserId).get();
-  //   user = User.fromDocument(doc);
-  //   successController.text = user.firstName;
-  //   messageController.text = user.message;
-  //   dataController.text = user.data;
-  //   setState(() {
-  //     isLoading = false;
-  //   });
-  // }
-
-  // updateProfileData() {
-  //   setState(() {
-  //     successController.text.trim().length < 3 ||
-  //             successController.text.isEmpty
-  //         ? _successValid = false
-  //         : _successValid = true;
-  //     successController.text.trim().length < 3 ||
-  //             successController.text.isEmpty
-  //         ? _messageValid = false
-  //         : _dataValid = true;
-  //     successdataler.text.trim().length < 3 ||
-  //             successController.text.isEmpty
-  //         ? _citizenValid = false
-  //         : _citizenValid = true;
-  //   });
-
-  //   if (_successValid &&
-  //       _messageValid &&
-  //       _dataValid &&
-  //     usersRef.document(widget.currentUserId).updateData({
-  //       "success": successController.text,
-  //       "success": messageController.text,
-  //       "success": dataController.text,
-  //     }));
-  //     SnackBar snackBar = SnackBar(content: Text("Profile updated!"));
-  //   }
-  // }
   HttpEditProfile dataResponse = HttpEditProfile(
-      address: 'Data not found',
-      citizen: 'Data not found',
-      date: 'Data not found',
-      firstName: 'Data not found',
-      id: 'Data not found',
-      fullName: 'Data not found',
-      nik: 'Data not found',
-      phone: 'Data not found');
+      address: '',
+      citizen: '',
+      date: '',
+      firstName: '',
+      fullName: '',
+      nik: '',
+      phone: '');
 
   List<User> listUser = [];
   Repository repository = Repository();
@@ -171,14 +119,23 @@ class _EditProfileState extends State<EditProfile> {
                             padding: EdgeInsets.only(right: 260),
                             child: Text(
                               "First Name",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: Colors.grey[600],
+                              ),
                             ),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                              textAlign: TextAlign.right,
                               controller: responseDisplayName,
                               decoration: InputDecoration(
-                                border: UnderlineInputBorder(),
+                                border: UnderlineInputBorder(
+                                    borderSide: BorderSide(width: 0.1)),
                                 hintText: 'Input your first name here',
                               ),
                             ),
@@ -190,14 +147,25 @@ class _EditProfileState extends State<EditProfile> {
                         children: [
                           Padding(
                             padding: EdgeInsets.only(right: 270),
-                            child: Text("Full Name"),
+                            child: Text(
+                              "Full Name",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w500,
+                                color: Colors.grey[600],
+                              ),
+                            ),
                           ),
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
                               controller: responseFullName,
+                              textAlign: TextAlign.right,
                               decoration: InputDecoration(
-                                border: UnderlineInputBorder(),
+                                border: UnderlineInputBorder(
+                                    borderSide: BorderSide(width: 0.1)),
                                 hintText: 'Input your full name here',
                               ),
                             ),
@@ -214,9 +182,14 @@ class _EditProfileState extends State<EditProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
                               controller: responseCitizen,
+                              textAlign: TextAlign.right,
                               decoration: InputDecoration(
-                                border: UnderlineInputBorder(),
+                                border: UnderlineInputBorder(
+                                    borderSide: BorderSide(width: 0.1)),
                                 hintText: 'Input your citizen here (WNA/WNI)',
                               ),
                             ),
@@ -233,9 +206,14 @@ class _EditProfileState extends State<EditProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
                               controller: responseNIK,
+                              textAlign: TextAlign.right,
                               decoration: InputDecoration(
-                                border: UnderlineInputBorder(),
+                                border: UnderlineInputBorder(
+                                    borderSide: BorderSide(width: 0.1)),
                                 hintText: 'Input your NIK here',
                               ),
                             ),
@@ -252,9 +230,14 @@ class _EditProfileState extends State<EditProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                              textAlign: TextAlign.right,
                               controller: responseAddress,
                               decoration: InputDecoration(
-                                border: UnderlineInputBorder(),
+                                border: UnderlineInputBorder(
+                                    borderSide: BorderSide(width: 0.1)),
                                 hintText: 'Input your address here',
                               ),
                             ),
@@ -271,9 +254,14 @@ class _EditProfileState extends State<EditProfile> {
                           Padding(
                             padding: EdgeInsets.only(left: 30, right: 30),
                             child: TextField(
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  color: Colors.black),
+                              textAlign: TextAlign.right,
                               controller: responsePhone,
                               decoration: InputDecoration(
-                                border: UnderlineInputBorder(),
+                                border: UnderlineInputBorder(
+                                    borderSide: BorderSide(width: 0.1)),
                                 hintText: 'Input your phone number here',
                               ),
                             ),
@@ -286,15 +274,21 @@ class _EditProfileState extends State<EditProfile> {
                       ElevatedButton(
                           onPressed: () {
                             HttpEditProfile.connectAPI(
-                                    '69ea6e5b-b858-4dd3-beda-f188f4c74c36')
+                                    responseDisplayName.text,
+                                    responseFullName.text,
+                                    responseCitizen.text,
+                                    responseNIK.text,
+                                    responseAddress.text,
+                                    responsePhone.text)
                                 .then((value) {
                               setState(() {
                                 dataResponse = value;
                               });
                             });
+                            print(responseDisplayName);
                           }, //ini lom diisi bg
                           child: Text(
-                            "Update Profile",
+                            "Refresh data",
                             style: TextStyle(
                               color: Color(0xFFFFFFFF),
                               fontSize: 20.0,

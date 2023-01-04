@@ -1,7 +1,9 @@
+// ignore_for_file: avoid_print, use_build_context_synchronously
+
 import 'dart:async';
 
+// import 'package:dropdown_formfield/dropdown_formfield.dart';
 import 'package:dropdown_formfield/dropdown_formfield.dart';
-import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -559,7 +561,7 @@ class _register2State extends State<register2> {
     // var headers = {'Content-Type': 'application/x-www-form-urlencoded'};
     // // print(_dateController.text);
     var response =
-        await http.post(Uri.parse("http://192.168.92.236:3000/auth/signup"),
+        await http.post(Uri.parse("http://192.168.1.39:3000/auth/signup"),
             body: ({
               'firstName': _firstNameController.text,
               'lastName': _lastNameController.text,
