@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:login/pages/home/home_page.dart'; //home_page
 import 'package:login/auth/register2.dart'; //register
+import 'package:login/authrepository/authrepository.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../BottomBar.dart';
 import 'forgot_pw_page.dart';
@@ -20,6 +21,7 @@ class Loginscreen extends StatefulWidget {
 class _Loginscreenstate extends State<Loginscreen> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
+  authrepository repository = authrepository();
 
   @override
   Widget build(BuildContext context) {
@@ -141,7 +143,23 @@ class _Loginscreenstate extends State<Loginscreen> {
                     backgroundColor: Color(0xff25bac2)),
                 onPressed: () async {
                   print("pressed");
-                  auth();
+                  FocusScope.of(context).unfocus();
+                  EasyLoading.show(status: 'loading...');
+                  bool response = await repository.login(
+                      _emailController.text, _passwordController.text);
+                  if (response == true) {
+                    EasyLoading.dismiss();
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (BuildContext ctx) => BottomBar()));
+                  } else {
+                    EasyLoading.dismiss();
+                    ScaffoldMessenger.of(context).showSnackBar(
+                        // SnackBar(content: Text("invalid username or password")));
+                        SnackBar(content: Text(repository.loginMessage)));
+                    print("gagal");
+                  }
                 },
                 child: Text(
                   "Sign in",
@@ -179,7 +197,7 @@ class _Loginscreenstate extends State<Loginscreen> {
     if (_passwordController.text.isNotEmpty &&
         _emailController.text.isNotEmpty) {
       var response = await http.post(
-          Uri.parse("http://192.168.92.236:3000/auth/login"),
+          Uri.parse("http://192.168.252.236:3000/auth/login"),
           body: ({
             'email': _emailController.text,
             'password': _passwordController.text

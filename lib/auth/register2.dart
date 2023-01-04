@@ -9,9 +9,10 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:intl/intl.dart';
-import 'package:login/pages/home/repository/repository.dart'; //repository
 import 'package:http/http.dart' as http;
 import 'dart:convert';
+
+import 'package:login/authrepository/authrepository.dart';
 
 class register2 extends StatefulWidget {
   // const register2({super.key});
@@ -21,7 +22,6 @@ class register2 extends StatefulWidget {
 }
 
 class _register2State extends State<register2> {
-  Repository repository = Repository();
   final _firstNameController = TextEditingController();
   final _lastNameController = TextEditingController();
   final _fullNameController = TextEditingController();
@@ -33,6 +33,7 @@ class _register2State extends State<register2> {
   final _passwordController = TextEditingController();
   String citizen = "";
   String role = "";
+  authrepository loginrepository = authrepository();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -535,8 +536,33 @@ class _register2State extends State<register2> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
                         backgroundColor: Color(0xff25bac2)),
-                    onPressed: () {
-                      postData();
+                    onPressed: () async {
+                      // postData();
+                      print("pressed");
+                      FocusScope.of(context).unfocus();
+                      EasyLoading.show(status: 'loading...');
+                      bool response = await loginrepository.register3(
+                          _firstNameController.text,
+                          _lastNameController.text,
+                          _fullNameController.text,
+                          citizen,
+                          _nikController.text,
+                          _addresController.text,
+                          _dateController.text,
+                          _phoneController.text,
+                          _emailController.text,
+                          _passwordController.text,
+                          role);
+                      if (response == true) {
+                        EasyLoading.showSuccess("success..");
+                      } else {
+                        EasyLoading.dismiss();
+                        ScaffoldMessenger.of(context).showSnackBar(
+                            // SnackBar(content: Text("invalid username or password")));
+                            SnackBar(
+                                content:
+                                    Text(loginrepository.registerMessage)));
+                      }
                     },
                     child: Text(
                       "Sign Up",
@@ -561,7 +587,7 @@ class _register2State extends State<register2> {
     // var headers = {'Content-Type': 'application/x-www-form-urlencoded'};
     // // print(_dateController.text);
     var response =
-        await http.post(Uri.parse("http://192.168.1.39:3000/auth/signup"),
+        await http.post(Uri.parse("http://192.168.252.236:3000/auth/signup"),
             body: ({
               'firstName': _firstNameController.text,
               'lastName': _lastNameController.text,
