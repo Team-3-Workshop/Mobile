@@ -207,6 +207,7 @@ class _register2State extends State<register2> {
                                       setState(() {
                                         citizen = value.toString();
                                       });
+                                      print("wna");
                                     },
                                   ),
                                 ),
