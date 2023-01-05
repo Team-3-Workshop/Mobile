@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:login/pages/payments/payments_methode.dart'; //payments method
 
-class PaymentDetail extends StatefulWidget {
-  // const PaymentDetail({super.key});
+class PaymentDetailRanuPane extends StatefulWidget {
+  // const PaymentDetailRanuPane({super.key});
 
   @override
-  State<PaymentDetail> createState() => _PaymentDetailState();
+  State<PaymentDetailRanuPane> createState() => _PaymentDetailStateBromo();
 }
 
-class _PaymentDetailState extends State<PaymentDetail> {
+class _PaymentDetailStateBromo extends State<PaymentDetailRanuPane> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +91,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                                 onPressed: () => Navigator.of(context).pop()
                                 // onPressed: () => Navigator.of(context).push(
                                 //     MaterialPageRoute(
-                                //         builder: (context) => PaymentDetail())),
+                                //         builder: (context) => PaymentDetailRanuPane())),
                                 ),
                           ],
                         );
@@ -149,7 +149,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                             child: Column(
                               children: [
                                 Image.asset(
-                                  'assets/images/ranu_kumbolo.jpg',
+                                  'assets/images/ranu pani.jpg',
                                   fit: BoxFit.cover,
                                   height: 450, // set your height
                                   width: MediaQuery.of(context).size.width,
@@ -158,7 +158,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                                   height: 10,
                                 ),
                                 Text(
-                                  "RANU KUMBOLO                                                                    ",
+                                  "RANU PANE                                                                          ",
                                   style: TextStyle(fontWeight: FontWeight.w500),
                                 ),
                                 SizedBox(
@@ -245,7 +245,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                   //               onPressed: () => Navigator.of(context).pop()
                   //               // onPressed: () => Navigator.of(context).push(
                   //               //     MaterialPageRoute(
-                  //               //         builder: (context) => PaymentDetail())),
+                  //               //         builder: (context) => PaymentDetailRanuPane())),
                   //               ),
                   //         ],
                   //       );

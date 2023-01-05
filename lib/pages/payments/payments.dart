@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:login/pages/payments/payments_detail.dart'; //payment detail
-import 'package:login/pages/payments/payments_finished.dart'; //payments finish
+import 'package:login/pages/payments/detail/payments_detail_ranukumbolo.dart'; //payment detail
+import 'package:login/pages/payments/detail/payments_detail_bromo.dart';
+import 'package:login/pages/payments/detail/payments_detail_ranupane.dart';
+import 'package:login/pages/payments/detail/payments_detail_ranuregulo.dart';
+import 'package:login/pages/payments/detail/payments_detail_semeru.dart';
+import 'package:login/pages/payments/finish/payments_finished_bromo.dart';
+import 'package:login/pages/payments/finish/payments_finished_ranukumbolo.dart';
+import 'package:login/pages/payments/finish/payments_finished_ranupane.dart';
+import 'package:login/pages/payments/finish/payments_finished_ranuregulo.dart';
+import 'package:login/pages/payments/finish/payments_finished_semeru.dart';
+import 'package:login/pages/payments/ongoing/payments_ongoing_bromo.dart';
+import 'package:login/pages/payments/ongoing/payments_ongoing_ranukumbolo.dart';
+import 'package:login/pages/payments/ongoing/payments_ongoing_ranupane.dart';
+import 'package:login/pages/payments/ongoing/payments_ongoing_ranuregulo.dart';
+import 'package:login/pages/payments/ongoing/payments_ongoing_semeru.dart';
+// import 'package:login/pages/payments/finish/payments_finished.dart'; //payments finish
 import 'package:login/pages/payments/payments_ongoing.dart'; //payments ongoing
-import 'package:login/pages/payments/payments_methode.dart';
-import 'package:login/prototype/counter.dart';
 
 class payments extends StatefulWidget {
   // const payments({super.key});
@@ -240,7 +252,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentDetailRanuKumbolo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -415,7 +427,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentDetailBromo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -590,7 +602,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentDetailRanuPane()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -765,7 +777,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentDetailRanuRegulo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -940,7 +952,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentDetailSemeru()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -992,7 +1004,7 @@ class _paymentsState extends State<payments> {
                                                     width: 130,
                                                   ),
                                                   Text(
-                                                    'Unpaid',
+                                                    'Finish',
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xFF25BAC2)),
@@ -1115,7 +1127,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentDetailRanuKumbolo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -1299,7 +1311,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentOngoingRanuKumbolo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -1474,7 +1486,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentOngoingBromo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -1649,7 +1661,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentOngoingRanuPane()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -1824,7 +1836,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentOngoingRanuRegulo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -1999,7 +2011,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentOngoingSemeru()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -2051,7 +2063,7 @@ class _paymentsState extends State<payments> {
                                                     width: 130,
                                                   ),
                                                   Text(
-                                                    'Unpaid',
+                                                    'Finish',
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xFF25BAC2)),
@@ -2174,7 +2186,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentFinishedRanuKumbolo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -2235,7 +2247,7 @@ class _paymentsState extends State<payments> {
                                                     width: 130,
                                                   ),
                                                   Text(
-                                                    'Unpaid',
+                                                    'Finish',
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xFF25BAC2)),
@@ -2358,7 +2370,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentFinishedRanuKumbolo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -2410,7 +2422,7 @@ class _paymentsState extends State<payments> {
                                                     width: 190,
                                                   ),
                                                   Text(
-                                                    'Unpaid',
+                                                    'Finish',
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xFF25BAC2)),
@@ -2533,7 +2545,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentFinishedBromo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -2585,7 +2597,7 @@ class _paymentsState extends State<payments> {
                                                     width: 161,
                                                   ),
                                                   Text(
-                                                    'Unpaid',
+                                                    'Finish',
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xFF25BAC2)),
@@ -2708,7 +2720,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentFinishedRanuPane()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -2760,7 +2772,7 @@ class _paymentsState extends State<payments> {
                                                     width: 147,
                                                   ),
                                                   Text(
-                                                    'Unpaid',
+                                                    'Finish',
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xFF25BAC2)),
@@ -2883,7 +2895,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentFinishedRanuRegulo()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -2935,7 +2947,7 @@ class _paymentsState extends State<payments> {
                                                     width: 180,
                                                   ),
                                                   Text(
-                                                    'Unpaid',
+                                                    'Finish',
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xFF25BAC2)),
@@ -3058,7 +3070,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentFinishedSemeru()),
                                                     ),
                                                     child: Text(
                                                       "More",
@@ -3110,7 +3122,7 @@ class _paymentsState extends State<payments> {
                                                     width: 130,
                                                   ),
                                                   Text(
-                                                    'Unpaid',
+                                                    'Finish',
                                                     style: TextStyle(
                                                         color:
                                                             Color(0xFF25BAC2)),
@@ -3233,7 +3245,7 @@ class _paymentsState extends State<payments> {
                                                             .push(
                                                       MaterialPageRoute(
                                                           builder: (context) =>
-                                                              PaymentDetail()),
+                                                              PaymentFinishedRanuKumbolo()),
                                                     ),
                                                     child: Text(
                                                       "More",

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:login/BottomBar.dart';
 
-class PaymentFinished extends StatefulWidget {
-  // const PaymentFinished({super.key});
+class PaymentFinishedRanuRegulo extends StatefulWidget {
+  // const PaymentFinishedRanuRegulo({super.key});
 
   @override
-  State<PaymentFinished> createState() => _PaymentFinishedState();
+  State<PaymentFinishedRanuRegulo> createState() =>
+      _PaymentFinishedRanuReguloState();
 }
 
-class _PaymentFinishedState extends State<PaymentFinished> {
+class _PaymentFinishedRanuReguloState extends State<PaymentFinishedRanuRegulo> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,7 +92,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                                 onPressed: () => Navigator.of(context).pop()
                                 // onPressed: () => Navigator.of(context).push(
                                 //     MaterialPageRoute(
-                                //         builder: (context) => PaymentDetail())),
+                                //         builder: (context) => PaymentDetailRanuRegulo())),
                                 ),
                           ],
                         );
@@ -149,7 +150,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                             child: Column(
                               children: [
                                 Image.asset(
-                                  'assets/images/ranu_kumbolo.jpg',
+                                  'assets/images/ranu regulo.jpg',
                                   fit: BoxFit.cover,
                                   height: 450, // set your height
                                   width: MediaQuery.of(context).size.width,
@@ -158,7 +159,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                                   height: 10,
                                 ),
                                 Text(
-                                  "RANU KUMBOLO                                                                    ",
+                                  "RANU REGULO                                                                          ",
                                   style: TextStyle(fontWeight: FontWeight.w500),
                                 ),
                                 SizedBox(
@@ -245,7 +246,7 @@ class _PaymentFinishedState extends State<PaymentFinished> {
                   //               onPressed: () => Navigator.of(context).pop()
                   //               // onPressed: () => Navigator.of(context).push(
                   //               //     MaterialPageRoute(
-                  //               //         builder: (context) => PaymentDetail())),
+                  //               //         builder: (context) => PaymentDetailRanuRegulo())),
                   //               ),
                   //         ],
                   //       );
