@@ -24,7 +24,8 @@ class _HomePageState extends State<HomePage> {
   int _activeIndex = 0;
   String i = "";
   var controller;
-
+  String hotel = "";
+  String trans = "";
   final CarouselController _controller = CarouselController();
   int _counter = 0;
   final TextEditingController _counterController = TextEditingController();
@@ -399,365 +400,542 @@ class _HomePageState extends State<HomePage> {
                                 // textScaleFactor: 1.0,
                               ))),
                           onTap: () {
-                            showModalBottomSheet(
+                            showModalBottomSheet<void>(
                                 context: context,
-                                builder: (context) {
-                                  return Padding(
-                                    padding: EdgeInsets.only(
-                                        bottom: MediaQuery.of(context)
-                                            .viewInsets
-                                            .bottom),
-                                    child: Container(
-                                      width: MediaQuery.of(context).size.width,
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 10, vertical: 10),
-                                      child: Center(
-                                        child: ListView(children: [
-                                          Column(
-                                            children: [
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 324),
-                                                child: TextButton.icon(
-                                                  onPressed: () =>
-                                                      Navigator.of(context)
-                                                          .pop(),
-                                                  icon: Icon(Icons.close,
-                                                      color: Colors.grey[700]),
-                                                  label: Text(''),
-                                                ),
-                                              ),
-                                              SizedBox(height: 10),
-                                              Row(
-                                                children: [
-                                                  SizedBox(width: 20),
-                                                  Image.asset(
-                                                    'assets/images/ranu_kumbolo.jpg',
-                                                    fit: BoxFit.cover,
-                                                    height: 160,
-                                                    width: 160,
-                                                  ),
-                                                  SizedBox(width: 40),
-                                                  Text(
-                                                    'Rp 700.000',
-                                                    style: TextStyle(
+                                builder: (BuildContext context) {
+                                  return StatefulBuilder(builder:
+                                      (BuildContext context,
+                                          StateSetter state) {
+                                    return Padding(
+                                      padding: EdgeInsets.only(
+                                          bottom: MediaQuery.of(context)
+                                              .viewInsets
+                                              .bottom),
+                                      child: Container(
+                                        width:
+                                            MediaQuery.of(context).size.width,
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal: 10, vertical: 10),
+                                        child: Center(
+                                          child: ListView(children: [
+                                            Column(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 324),
+                                                  child: TextButton.icon(
+                                                    onPressed: () =>
+                                                        Navigator.of(context)
+                                                            .pop(),
+                                                    icon: Icon(Icons.close,
                                                         color:
-                                                            Color(0xFF25BAC2),
-                                                        fontSize: 16),
-                                                  ),
-                                                ],
-                                              ),
-                                              SizedBox(height: 40),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 135),
-                                                child: Text(
-                                                  "   Choose your hotel:",
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 22,
+                                                            Colors.grey[700]),
+                                                    label: Text(''),
                                                   ),
                                                 ),
-                                              ),
-                                              SizedBox(height: 20),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 90),
-                                                child: InkWell(
-                                                  child: Container(
-                                                    height: 70,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
-                                                    child: Row(
+                                                SizedBox(height: 10),
+                                                Row(
+                                                  children: [
+                                                    SizedBox(width: 20),
+                                                    Image.asset(
+                                                      'assets/images/ranu_kumbolo.jpg',
+                                                      fit: BoxFit.cover,
+                                                      height: 160,
+                                                      width: 160,
+                                                    ),
+                                                    SizedBox(width: 40),
+                                                    Text(
+                                                      'Rp 700.000',
+                                                      style: TextStyle(
+                                                          color:
+                                                              Color(0xFF25BAC2),
+                                                          fontSize: 16),
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(height: 40),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 135,
+                                                          bottom: 40),
+                                                  child: Text(
+                                                    "   Choose your hotel:",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 22,
+                                                    ),
+                                                  ),
+                                                ),
+                                                new Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: <Widget>[
+                                                    Row(
                                                       children: [
-                                                        SizedBox(width: 20),
+                                                        new Radio(
+                                                          value:
+                                                              "el shadai homestay",
+                                                          groupValue: hotel,
+                                                          onChanged: (value) {
+                                                            state(() {
+                                                              hotel = value
+                                                                  .toString();
+                                                            });
+                                                            print(hotel);
+                                                          },
+                                                        ),
                                                         Image.asset(
                                                           'assets/images/elshadaihomestay.jpg',
                                                           height: 70,
                                                           width: 70,
                                                         ),
-                                                        Text(
-                                                            '   El Shadai Homestay'),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  left: 15),
+                                                          child: Text(
+                                                              "el shadai homestay"),
+                                                        )
                                                       ],
                                                     ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(height: 20),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 90),
-                                                child: InkWell(
-                                                  child: Container(
-                                                    height: 70,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
-                                                    child: Row(
+                                                    Row(
                                                       children: [
-                                                        SizedBox(width: 20),
+                                                        new Radio(
+                                                          value:
+                                                              "resort ranu pane",
+                                                          groupValue: hotel,
+                                                          onChanged: (value) {
+                                                            state(() {
+                                                              hotel = value
+                                                                  .toString();
+                                                            });
+                                                            print(hotel);
+                                                          },
+                                                        ),
                                                         Image.asset(
                                                           'assets/images/resortranupane.jpg',
                                                           height: 70,
                                                           width: 70,
                                                         ),
-                                                        Text(
-                                                            '   Resort Ranu Pane'),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  left: 15),
+                                                          child: Text(
+                                                              "resort ranu pane"),
+                                                        )
                                                       ],
                                                     ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(height: 20),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 90),
-                                                child: InkWell(
-                                                  child: Container(
-                                                    height: 70,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
-                                                    child: Row(
+                                                    Row(
                                                       children: [
-                                                        SizedBox(width: 20),
+                                                        new Radio(
+                                                          value:
+                                                              "griya semeru homesatay",
+                                                          groupValue: hotel,
+                                                          onChanged: (value) {
+                                                            state(() {
+                                                              hotel = value
+                                                                  .toString();
+                                                            });
+                                                            print(hotel);
+                                                          },
+                                                        ),
                                                         Image.asset(
                                                           'assets/images/griyasemeruhomestay.jpg',
                                                           height: 70,
                                                           width: 70,
                                                         ),
-                                                        Text(
-                                                            '   Giya Semeru Homestay'),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  left: 15),
+                                                          child: Text(
+                                                              "griya semeru homesatay"),
+                                                        )
                                                       ],
+                                                    ),
+                                                  ],
+                                                ),
+                                                SizedBox(height: 20),
+                                                // Padding(
+                                                //   padding:
+                                                //       const EdgeInsets.only(
+                                                //           left: 20),
+                                                //   child: Container(
+                                                //     height: 70,
+                                                //     // width: MediaQuery.of(context)
+                                                //     //     .size
+                                                //     //     .width,
+                                                //     child: Row(
+                                                //       children: [
+                                                //         Container(
+                                                //           width: 30,
+                                                //           child: RadioListTile(
+                                                //             // title: Text("user"),
+                                                //             value:
+                                                //                 "El Shadai Homestay",
+                                                //             groupValue: hotel,
+                                                //             onChanged: (value) {
+                                                //               setState(() {
+                                                //                 hotel = value
+                                                //                     .toString();
+                                                //               });
+                                                //             },
+                                                //           ),
+                                                //         ),
+                                                //         SizedBox(width: 20),
+                                                //         Image.asset(
+                                                //           'assets/images/elshadaihomestay.jpg',
+                                                //           height: 70,
+                                                //           width: 70,
+                                                //         ),
+                                                //         Padding(
+                                                //           padding:
+                                                //               const EdgeInsets
+                                                //                       .only(
+                                                //                   left: 15),
+                                                //           child: Text(
+                                                //               'El Shadai Homestay'),
+                                                //         ),
+                                                //       ],
+                                                //     ),
+                                                //   ),
+                                                // ),
+                                                // SizedBox(height: 20),
+                                                // Padding(
+                                                //   padding:
+                                                //       const EdgeInsets.only(
+                                                //           left: 20),
+                                                //   child: Container(
+                                                //     height: 70,
+                                                //     width:
+                                                //         MediaQuery.of(context)
+                                                //             .size
+                                                //             .width,
+                                                //     child: Row(
+                                                //       children: [
+                                                //         Container(
+                                                //           width: 20,
+                                                //           child: RadioListTile(
+                                                //             // title: Text("user"),
+                                                //             value:
+                                                //                 "Resort Ranu Pane",
+                                                //             groupValue: hotel,
+                                                //             onChanged: (value) {
+                                                //               setState(() {
+                                                //                 hotel = value
+                                                //                     .toString();
+                                                //               });
+                                                //             },
+                                                //           ),
+                                                //         ),
+                                                //         SizedBox(width: 20),
+                                                //         Image.asset(
+                                                //           'assets/images/resortranupane.jpg',
+                                                //           height: 70,
+                                                //           width: 70,
+                                                //         ),
+                                                //         Padding(
+                                                //           padding:
+                                                //               const EdgeInsets
+                                                //                       .only(
+                                                //                   left: 15),
+                                                //           child: Text(
+                                                //               'Resort Ranu Pane'),
+                                                //         ),
+                                                //       ],
+                                                //     ),
+                                                //   ),
+                                                // ),
+                                                // SizedBox(height: 20),
+                                                // Padding(
+                                                //   padding:
+                                                //       const EdgeInsets.only(
+                                                //           left: 20),
+                                                //   child: Container(
+                                                //     height: 70,
+                                                //     width:
+                                                //         MediaQuery.of(context)
+                                                //             .size
+                                                //             .width,
+                                                //     child: Row(
+                                                //       children: [
+                                                //         Container(
+                                                //           width: 20,
+                                                //           child: RadioListTile(
+                                                //             // title: Text("user"),
+                                                //             value:
+                                                //                 "Giya Semeru Homestay",
+                                                //             groupValue: hotel,
+                                                //             onChanged: (value) {
+                                                //               setState(() {
+                                                //                 hotel = value
+                                                //                     .toString();
+                                                //               });
+                                                //             },
+                                                //           ),
+                                                //         ),
+                                                //         SizedBox(width: 20),
+                                                //         Image.asset(
+                                                //           'assets/images/griyasemeruhomestay.jpg',
+                                                //           height: 70,
+                                                //           width: 70,
+                                                //         ),
+                                                //         Padding(
+                                                //           padding:
+                                                //               const EdgeInsets
+                                                //                       .only(
+                                                //                   left: 15),
+                                                //           child: Text(
+                                                //               'Giya Semeru Homestay'),
+                                                //         ),
+                                                //       ],
+                                                //     ),
+                                                //   ),
+                                                // ),
+                                                SizedBox(height: 40),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 105),
+                                                  child: Text(
+                                                    "  Choose your vehicle:",
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                      fontSize: 22,
                                                     ),
                                                   ),
                                                 ),
-                                              ),
-                                              SizedBox(height: 40),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 105),
-                                                child: Text(
-                                                  "  Choose your vehicle:",
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 22,
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(height: 20),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 90),
-                                                child: InkWell(
-                                                  child: Container(
-                                                    height: 70,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
-                                                    child: Row(
+                                                SizedBox(height: 20),
+                                                Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: <Widget>[
+                                                    Row(
                                                       children: [
-                                                        SizedBox(width: 20),
+                                                        new Radio(
+                                                          value: "jeep",
+                                                          groupValue: trans,
+                                                          onChanged: (value) {
+                                                            state(() {
+                                                              trans = value
+                                                                  .toString();
+                                                            });
+                                                            print(trans);
+                                                          },
+                                                        ),
                                                         Image.asset(
                                                           'assets/images/jeep.jpg',
                                                           height: 70,
                                                           width: 70,
                                                         ),
-                                                        Text('   Jeep'),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  left: 15),
+                                                          child: Text("jeep"),
+                                                        )
                                                       ],
                                                     ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(height: 20),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 90),
-                                                child: InkWell(
-                                                  child: Container(
-                                                    height: 70,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
-                                                    child: Row(
+                                                    Row(
                                                       children: [
-                                                        SizedBox(width: 20),
+                                                        new Radio(
+                                                          value: "motocross",
+                                                          groupValue: trans,
+                                                          onChanged: (value) {
+                                                            state(() {
+                                                              trans = value
+                                                                  .toString();
+                                                            });
+                                                            print(trans);
+                                                          },
+                                                        ),
                                                         Image.asset(
                                                           'assets/images/motorcross.jpg',
                                                           height: 70,
                                                           width: 70,
                                                         ),
-                                                        Text('   Motorcross'),
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                      .only(
+                                                                  left: 15),
+                                                          child:
+                                                              Text("motocross"),
+                                                        )
                                                       ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(height: 20),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    right: 90),
-                                                child: InkWell(
-                                                  child: Container(
-                                                    height: 70,
-                                                    width:
-                                                        MediaQuery.of(context)
-                                                            .size
-                                                            .width,
-                                                    child: Row(
-                                                      children: [
-                                                        SizedBox(width: 20),
-                                                        Image.asset(
-                                                          'assets/images/elshadaihomestay.jpg',
-                                                          height: 70,
-                                                          width: 70,
-                                                        ),
-                                                        Text(
-                                                            '   El Shadai Homestay'),
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                              SizedBox(height: 20),
-                                              Padding(
-                                                padding: const EdgeInsets.only(
-                                                    left: 200),
-                                                child: Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment.center,
-                                                  children: <Widget>[
-                                                    SizedBox(
-                                                      width: 44,
-                                                      height: 30,
-                                                      child: ElevatedButton(
-                                                        style: ElevatedButton
-                                                            .styleFrom(
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(
-                                                                                6),
-                                                                        side:
-                                                                            BorderSide(
-                                                                          color: Colors
-                                                                              .grey
-                                                                              .shade200,
-                                                                          width:
-                                                                              3.0,
-                                                                        )),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .white,
-                                                                shadowColor: Colors
-                                                                    .transparent),
-                                                        onPressed: () {
-                                                          setState(() {
-                                                            _counter--;
-                                                            _counterController
-                                                                    .text =
-                                                                '$_counter';
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.remove,
-                                                          size: 14,
-                                                          color:
-                                                              Color(0xFF25BAC2),
-                                                        ),
-                                                      ),
-                                                    ),
-                                                    SizedBox(height: 20),
-                                                    Container(
-                                                      width: 50,
-                                                      child: TextField(
-                                                        decoration:
-                                                            InputDecoration(
-                                                          border:
-                                                              InputBorder.none,
-                                                        ),
-                                                        keyboardType:
-                                                            TextInputType
-                                                                .number,
-                                                        textAlign:
-                                                            TextAlign.center,
-                                                        controller:
-                                                            _counterController,
-                                                      ),
-                                                    ),
-                                                    SizedBox(
-                                                      width: 44,
-                                                      height: 30,
-                                                      child: ElevatedButton(
-                                                        style: ElevatedButton
-                                                            .styleFrom(
-                                                                shape:
-                                                                    RoundedRectangleBorder(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(
-                                                                                6),
-                                                                        side:
-                                                                            BorderSide(
-                                                                          color: Colors
-                                                                              .grey
-                                                                              .shade200,
-                                                                          width:
-                                                                              3.0,
-                                                                        )),
-                                                                backgroundColor:
-                                                                    Colors
-                                                                        .white,
-                                                                shadowColor: Colors
-                                                                    .transparent),
-                                                        onPressed: () {
-                                                          setState(() {
-                                                            _counter++;
-                                                            _counterController
-                                                                    .text =
-                                                                '$_counter';
-                                                          });
-                                                        },
-                                                        child: Icon(
-                                                          Icons.add,
-                                                          size: 14,
-                                                          color:
-                                                              Color(0xFF25BAC2),
-                                                        ),
-                                                      ),
                                                     ),
                                                   ],
                                                 ),
-                                              ),
-                                              Container(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 10.0),
-                                                decoration: BoxDecoration(),
-                                                margin: EdgeInsets.all(15),
-                                                child: ElevatedButton(
-                                                    onPressed: () {},
-                                                    style: ElevatedButton
-                                                        .styleFrom(
-                                                            backgroundColor:
-                                                                Color(
-                                                                    0xFF25BAC2),
-                                                            shape:
-                                                                StadiumBorder()),
-                                                    child: Text(
-                                                        "                             Buy Now                                        ")),
-                                              )
-                                            ],
-                                          ),
-                                        ]),
+                                                // SizedBox(height: 20),
+                                                // Padding(
+                                                //   padding:
+                                                //       const EdgeInsets.only(
+                                                //           right: 90),
+                                                //   child: InkWell(
+                                                //     child: Container(
+                                                //       height: 70,
+                                                //       width:
+                                                //           MediaQuery.of(context)
+                                                //               .size
+                                                //               .width,
+                                                //       child: Row(
+                                                //         children: [
+                                                //           SizedBox(width: 20),
+                                                //           Image.asset(
+                                                //             'assets/images/elshadaihomestay.jpg',
+                                                //             height: 70,
+                                                //             width: 70,
+                                                //           ),
+                                                //           Text(
+                                                //               '   El Shadai Homestay'),
+                                                //         ],
+                                                //       ),
+                                                //     ),
+                                                //   ),
+                                                // ),
+                                                SizedBox(height: 20),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          left: 200),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: <Widget>[
+                                                      SizedBox(
+                                                        width: 44,
+                                                        height: 30,
+                                                        child: ElevatedButton(
+                                                          style: ElevatedButton
+                                                              .styleFrom(
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(
+                                                                              6),
+                                                                          side:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Colors.grey.shade200,
+                                                                            width:
+                                                                                3.0,
+                                                                          )),
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .white,
+                                                                  shadowColor:
+                                                                      Colors
+                                                                          .transparent),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              _counter--;
+                                                              _counterController
+                                                                      .text =
+                                                                  '$_counter';
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.remove,
+                                                            size: 14,
+                                                            color: Color(
+                                                                0xFF25BAC2),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      SizedBox(height: 20),
+                                                      Container(
+                                                        width: 50,
+                                                        child: TextField(
+                                                          decoration:
+                                                              InputDecoration(
+                                                            border: InputBorder
+                                                                .none,
+                                                          ),
+                                                          keyboardType:
+                                                              TextInputType
+                                                                  .number,
+                                                          textAlign:
+                                                              TextAlign.center,
+                                                          controller:
+                                                              _counterController,
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        width: 44,
+                                                        height: 30,
+                                                        child: ElevatedButton(
+                                                          style: ElevatedButton
+                                                              .styleFrom(
+                                                                  shape:
+                                                                      RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(
+                                                                              6),
+                                                                          side:
+                                                                              BorderSide(
+                                                                            color:
+                                                                                Colors.grey.shade200,
+                                                                            width:
+                                                                                3.0,
+                                                                          )),
+                                                                  backgroundColor:
+                                                                      Colors
+                                                                          .white,
+                                                                  shadowColor:
+                                                                      Colors
+                                                                          .transparent),
+                                                          onPressed: () {
+                                                            setState(() {
+                                                              _counter++;
+                                                              _counterController
+                                                                      .text =
+                                                                  '$_counter';
+                                                            });
+                                                          },
+                                                          child: Icon(
+                                                            Icons.add,
+                                                            size: 14,
+                                                            color: Color(
+                                                                0xFF25BAC2),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  padding: const EdgeInsets
+                                                          .symmetric(
+                                                      horizontal: 10.0),
+                                                  decoration: BoxDecoration(),
+                                                  margin: EdgeInsets.all(15),
+                                                  child: ElevatedButton(
+                                                      onPressed: () {},
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              backgroundColor:
+                                                                  Color(
+                                                                      0xFF25BAC2),
+                                                              shape:
+                                                                  StadiumBorder()),
+                                                      child: Text(
+                                                          "                             Buy Now                                        ")),
+                                                )
+                                              ],
+                                            ),
+                                          ]),
+                                        ),
                                       ),
-                                    ),
-                                  );
+                                    );
+                                  });
                                 });
                           },
                           // Navigator.of(context).push(

@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../BottomBar.dart';
 
 class authrepository {
-  final _baseUrl = "http://192.168.1.11:3000";
+  final _baseUrl = "http://192.168.1.10:3000";
 
   String loginMessage = "";
   String registerMessage = "";
