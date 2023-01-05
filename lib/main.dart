@@ -22,7 +22,7 @@ void main() async {
     debugShowCheckedModeBanner: false,
     home: data == null
         ? const SplashScreen()
-        : Loginscreen(), //profile page itu bottombar
+        : BottomBar(), //profile page itu bottombar
     builder: EasyLoading.init(),
   ));
   configLoading();
