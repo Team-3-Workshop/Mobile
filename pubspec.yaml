@@ -67,8 +67,13 @@ flutter:
   assets:
     - assets/bromoh.jpg
     - assets/ranu pani.jpg
+    - assets/elshadaihomestay.jpg
+    - assets/griyasemeruhomestay.jpg
+    - assets/resortranupane.jpg
     - assets/ranu regulo.jpg
     - assets/logoo.jpg
+    - assets/jeep.jpg
+    - assets/motorcross.jpg
     - assets/pdf/pdf.pdf
     - assets/justina.jpg
     - assets/images/storiatour.png

@@ -10,7 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../BottomBar.dart';
 
 class authrepository {
-  final _baseUrl = "http://192.168.1.36:3000";
+  final _baseUrl = "http://192.168.1.11:3000";
 
   String loginMessage = "";
   String registerMessage = "";
@@ -24,7 +24,7 @@ class authrepository {
       final output = jsonDecode(response.body);
       if (response.statusCode == 200) {
         SharedPreferences storage = await SharedPreferences.getInstance();
-        await storage.setString('data', output['data']['email']);
+        await storage.setString('data', output['data']['id']);
         var data = storage.getString('data');
         print("login as $data");
         return true;

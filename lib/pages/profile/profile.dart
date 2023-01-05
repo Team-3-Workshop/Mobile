@@ -11,7 +11,6 @@ import 'package:login/pages/profile/settings.dart'; //settings
 import 'package:flutter/material.dart';
 import 'package:login/pages/profile/sop.dart';
 import 'package:shared_preferences/shared_preferences.dart'; //sop
-import 'package:login/pages/profile/models/http_edit_profile.dart';
 
 class Profile extends StatefulWidget {
   // const Profile({super.key});
@@ -134,7 +133,7 @@ class _ProfileState extends State<Profile> {
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: TextButton(
-                      onPressed: () async {
+                      onPressed: () {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -155,6 +154,32 @@ class _ProfileState extends State<Profile> {
                   Padding(
                     padding: const EdgeInsets.only(right: 15.0),
                     child: Icon(Icons.person_search_rounded,
+                        size: 40.0, color: Colors.grey.shade400),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Tutorial',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15.0),
+                    child: Icon(Icons.auto_stories,
                         size: 40.0, color: Colors.grey.shade400),
                   )
                 ],
@@ -193,13 +218,42 @@ class _ProfileState extends State<Profile> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
+                    padding: const EdgeInsets.only(left: 15),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => setting()));
+                      },
+                      child: Text(
+                        'Setting',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 15.0),
+                    child: Icon(Icons.settings,
+                        size: 40.0, color: Colors.grey.shade400),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 25.0),
                     child: Text(
-                      ' Logout',
+                      'Logout',
                       style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 20,
-                          color: Colors.black),
+                        fontWeight: FontWeight.w400,
+                        fontSize: 20,
+                      ),
                     ),
                   ),
                   Spacer(),

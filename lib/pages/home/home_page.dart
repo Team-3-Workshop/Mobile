@@ -446,60 +446,311 @@ class _HomePageState extends State<HomePage> {
                                                   ),
                                                 ],
                                               ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: <Widget>[
-                                                  SizedBox(
-                                                    width: 30,
-                                                    height: 20,
-                                                    child: ElevatedButton(
-                                                      onPressed: () {
-                                                        setState(() {
-                                                          _counter--;
-                                                          _counterController
-                                                                  .text =
-                                                              '$_counter';
-                                                        });
-                                                      },
-                                                      child: Icon(
-                                                        Icons.remove,
-                                                        size: 13,
-                                                      ),
-                                                    ),
+                                              SizedBox(height: 40),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 170),
+                                                child: Text(
+                                                  "   Choose your hotel:",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22,
                                                   ),
-                                                  SizedBox(height: 20),
-                                                  Container(
-                                                    width: 40,
-                                                    child: TextField(
-                                                      decoration:
-                                                          InputDecoration(
-                                                        border:
-                                                            InputBorder.none,
-                                                      ),
-                                                      keyboardType:
-                                                          TextInputType.number,
-                                                      textAlign:
-                                                          TextAlign.center,
-                                                      controller:
-                                                          _counterController,
-                                                    ),
-                                                  ),
-                                                  SizedBox(height: 20),
-                                                  ElevatedButton(
-                                                    onPressed: () {
-                                                      setState(() {
-                                                        _counter++;
-                                                        _counterController
-                                                            .text = '$_counter';
-                                                      });
-                                                    },
-                                                    child: Icon(
-                                                      Icons.add,
-                                                    ),
-                                                  ),
-                                                ],
+                                                ),
                                               ),
+                                              SizedBox(height: 20),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 90),
+                                                child: InkWell(
+                                                  child: Container(
+                                                    height: 70,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    child: Row(
+                                                      children: [
+                                                        SizedBox(width: 20),
+                                                        Image.asset(
+                                                          'assets/images/elshadaihomestay.jpg',
+                                                          height: 70,
+                                                          width: 70,
+                                                        ),
+                                                        Text(
+                                                            '   El Shadai Homestay'),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 90),
+                                                child: InkWell(
+                                                  child: Container(
+                                                    height: 70,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    child: Row(
+                                                      children: [
+                                                        SizedBox(width: 20),
+                                                        Image.asset(
+                                                          'assets/images/resortranupane.jpg',
+                                                          height: 70,
+                                                          width: 70,
+                                                        ),
+                                                        Text(
+                                                            '   Resort Ranu Pane'),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 90),
+                                                child: InkWell(
+                                                  child: Container(
+                                                    height: 70,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    child: Row(
+                                                      children: [
+                                                        SizedBox(width: 20),
+                                                        Image.asset(
+                                                          'assets/images/griyasemeruhomestay.jpg',
+                                                          height: 70,
+                                                          width: 70,
+                                                        ),
+                                                        Text(
+                                                            '   Giya Semeru Homestay'),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 40),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 140),
+                                                child: Text(
+                                                  "  Choose your vehicle:",
+                                                  style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 22,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 90),
+                                                child: InkWell(
+                                                  child: Container(
+                                                    height: 70,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    child: Row(
+                                                      children: [
+                                                        SizedBox(width: 20),
+                                                        Image.asset(
+                                                          'assets/images/jeep.jpg',
+                                                          height: 70,
+                                                          width: 70,
+                                                        ),
+                                                        Text('   Jeep'),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 90),
+                                                child: InkWell(
+                                                  child: Container(
+                                                    height: 70,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    child: Row(
+                                                      children: [
+                                                        SizedBox(width: 20),
+                                                        Image.asset(
+                                                          'assets/images/motorcross.jpg',
+                                                          height: 70,
+                                                          width: 70,
+                                                        ),
+                                                        Text('   Motorcross'),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 90),
+                                                child: InkWell(
+                                                  child: Container(
+                                                    height: 70,
+                                                    width:
+                                                        MediaQuery.of(context)
+                                                            .size
+                                                            .width,
+                                                    child: Row(
+                                                      children: [
+                                                        SizedBox(width: 20),
+                                                        Image.asset(
+                                                          'assets/images/elshadaihomestay.jpg',
+                                                          height: 70,
+                                                          width: 70,
+                                                        ),
+                                                        Text(
+                                                            '   El Shadai Homestay'),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 200),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  children: <Widget>[
+                                                    SizedBox(
+                                                      width: 44,
+                                                      height: 30,
+                                                      child: ElevatedButton(
+                                                        style: ElevatedButton
+                                                            .styleFrom(
+                                                                shape:
+                                                                    RoundedRectangleBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(
+                                                                                6),
+                                                                        side:
+                                                                            BorderSide(
+                                                                          color: Colors
+                                                                              .grey
+                                                                              .shade200,
+                                                                          width:
+                                                                              3.0,
+                                                                        )),
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .white,
+                                                                shadowColor: Colors
+                                                                    .transparent),
+                                                        onPressed: () {
+                                                          setState(() {
+                                                            _counter--;
+                                                            _counterController
+                                                                    .text =
+                                                                '$_counter';
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons.remove,
+                                                          size: 14,
+                                                          color:
+                                                              Color(0xFF25BAC2),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    SizedBox(height: 20),
+                                                    Container(
+                                                      width: 50,
+                                                      child: TextField(
+                                                        decoration:
+                                                            InputDecoration(
+                                                          border:
+                                                              InputBorder.none,
+                                                        ),
+                                                        keyboardType:
+                                                            TextInputType
+                                                                .number,
+                                                        textAlign:
+                                                            TextAlign.center,
+                                                        controller:
+                                                            _counterController,
+                                                      ),
+                                                    ),
+                                                    SizedBox(
+                                                      width: 44,
+                                                      height: 30,
+                                                      child: ElevatedButton(
+                                                        style: ElevatedButton
+                                                            .styleFrom(
+                                                                shape:
+                                                                    RoundedRectangleBorder(
+                                                                        borderRadius:
+                                                                            BorderRadius.circular(
+                                                                                6),
+                                                                        side:
+                                                                            BorderSide(
+                                                                          color: Colors
+                                                                              .grey
+                                                                              .shade200,
+                                                                          width:
+                                                                              3.0,
+                                                                        )),
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .white,
+                                                                shadowColor: Colors
+                                                                    .transparent),
+                                                        onPressed: () {
+                                                          setState(() {
+                                                            _counter++;
+                                                            _counterController
+                                                                    .text =
+                                                                '$_counter';
+                                                          });
+                                                        },
+                                                        child: Icon(
+                                                          Icons.add,
+                                                          size: 14,
+                                                          color:
+                                                              Color(0xFF25BAC2),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ),
+                                              Container(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 10.0),
+                                                decoration: BoxDecoration(),
+                                                margin: EdgeInsets.all(15),
+                                                child: ElevatedButton(
+                                                    onPressed: () {},
+                                                    style: ElevatedButton
+                                                        .styleFrom(
+                                                            backgroundColor:
+                                                                Color(
+                                                                    0xFF25BAC2),
+                                                            shape:
+                                                                StadiumBorder()),
+                                                    child: Text(
+                                                        "                                   Buy Now                                        ")),
+                                              )
                                             ],
                                           ),
                                         ]),

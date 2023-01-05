@@ -2,7 +2,10 @@
 
 // ignore_for_file: unnecessary_null_comparison, prefer_const_constructors, avoid_unnecessary_containers, use_key_in_widget_constructors, avoid_print, annotate_overrides
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:login/pages/profile/models/http_edit_profile.dart';
 import 'package:login/prototype/model.dart'; //model
 import 'package:login/prototype/repository.dart'; //repository
@@ -17,6 +20,16 @@ class EditProfile extends StatefulWidget {
 }
 
 class _EditProfileState extends State<EditProfile> {
+  File? image;
+
+  Future getImage() async {
+    final ImagePicker _picker = ImagePicker();
+    final XFile? imagePicked =
+        await _picker.pickImage(source: ImageSource.gallery);
+    image = File(imagePicked!.path);
+    setState(() {});
+  }
+
   HttpEditProfile dataResponse = HttpEditProfile(
       address: '',
       citizen: '',
@@ -41,7 +54,7 @@ class _EditProfileState extends State<EditProfile> {
   }
 
   Widget build(BuildContext context) {
-    final responseDisplayName = TextEditingController(
+    final responseFirstName = TextEditingController(
       text: (dataResponse.firstName == null)
           ? 'Data not found'
           : dataResponse.firstName,
@@ -100,13 +113,49 @@ class _EditProfileState extends State<EditProfile> {
                 const SizedBox(
                   height: 10,
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(10),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage('assets/images/justina.jpg'),
-                    radius: 75,
+                Stack(children: [
+                  const Padding(
+                    padding: EdgeInsets.all(10),
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/justina.jpg'),
+                      radius: 75,
+                    ),
                   ),
-                ),
+                  image != null
+                      ? Container(
+                          // width: MediaQuery.of(context).size.width,
+                          width: 220,
+                          height: 100,
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 125),
+                            child: ClipOval(
+                              child: Image.file(
+                                image!,
+                                height: 96,
+                                width: 96,
+                                fit: BoxFit.cover,
+                              ),
+                              clipper: MyClip(),
+                            ),
+                          ))
+                      : Container(),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(148, 58, 0, 0),
+                    child: MaterialButton(
+                      onPressed: () async {
+                        await getImage();
+                      },
+                      color: Color(0xFF25BAC2),
+                      textColor: Colors.white,
+                      child: Icon(
+                        Icons.camera_alt,
+                        size: 16,
+                      ),
+                      padding: EdgeInsets.all(10),
+                      shape: CircleBorder(),
+                    ),
+                  ),
+                ]),
                 const SizedBox(
                   height: 40,
                 ),
@@ -132,7 +181,7 @@ class _EditProfileState extends State<EditProfile> {
                                   fontWeight: FontWeight.w400,
                                   color: Colors.black),
                               textAlign: TextAlign.right,
-                              controller: responseDisplayName,
+                              controller: responseFirstName,
                               decoration: InputDecoration(
                                 border: UnderlineInputBorder(
                                     borderSide: BorderSide(width: 0.1)),
@@ -274,7 +323,7 @@ class _EditProfileState extends State<EditProfile> {
                       ElevatedButton(
                           onPressed: () {
                             HttpEditProfile.connectAPI(
-                                    responseDisplayName.text,
+                                    responseFirstName.text,
                                     responseFullName.text,
                                     responseCitizen.text,
                                     responseNIK.text,
@@ -285,7 +334,7 @@ class _EditProfileState extends State<EditProfile> {
                                 dataResponse = value;
                               });
                             });
-                            print(responseDisplayName);
+                            print(responseFirstName);
                           }, //ini lom diisi bg
                           child: Text(
                             "Refresh data",
@@ -305,5 +354,15 @@ class _EditProfileState extends State<EditProfile> {
             ),
           ],
         )));
+  }
+}
+
+class MyClip extends CustomClipper<Rect> {
+  Rect getClip(Size size) {
+    return Rect.fromLTWH(0, 0, 90, 90);
+  }
+
+  bool shouldReclip(oldClipper) {
+    return false;
   }
 }
