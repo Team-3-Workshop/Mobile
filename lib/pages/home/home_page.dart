@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sized_box_for_whitespace
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -408,6 +408,7 @@ class _HomePageState extends State<HomePage> {
                                             .viewInsets
                                             .bottom),
                                     child: Container(
+                                      width: MediaQuery.of(context).size.width,
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 10, vertical: 10),
                                       child: Center(
@@ -449,7 +450,7 @@ class _HomePageState extends State<HomePage> {
                                               SizedBox(height: 40),
                                               Padding(
                                                 padding: const EdgeInsets.only(
-                                                    right: 170),
+                                                    right: 135),
                                                 child: Text(
                                                   "   Choose your hotel:",
                                                   style: TextStyle(
@@ -539,7 +540,7 @@ class _HomePageState extends State<HomePage> {
                                               SizedBox(height: 40),
                                               Padding(
                                                 padding: const EdgeInsets.only(
-                                                    right: 140),
+                                                    right: 105),
                                                 child: Text(
                                                   "  Choose your vehicle:",
                                                   style: TextStyle(
@@ -749,7 +750,7 @@ class _HomePageState extends State<HomePage> {
                                                             shape:
                                                                 StadiumBorder()),
                                                     child: Text(
-                                                        "                                   Buy Now                                        ")),
+                                                        "                             Buy Now                                        ")),
                                               )
                                             ],
                                           ),
