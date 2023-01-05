@@ -154,11 +154,16 @@ class _Loginscreenstate extends State<Loginscreen> {
                         MaterialPageRoute(
                             builder: (BuildContext ctx) => BottomBar()));
                   } else {
-                    EasyLoading.dismiss();
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        // SnackBar(content: Text("invalid username or password")));
-                        SnackBar(content: Text(repository.loginMessage)));
-                    print("gagal");
+                    if (repository.connectionFail != "") {
+                      EasyLoading.dismiss();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text("connectionFail")));
+                      print("gagal");
+                    } else {
+                      EasyLoading.dismiss();
+                      ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text(repository.loginMessage)));
+                    }
                   }
                 },
                 child: Text(
