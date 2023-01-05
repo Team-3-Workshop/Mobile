@@ -1,6 +1,9 @@
 // ignore_for_file: avoid_print
+// ignore: avoid_null_checks_in_equality_operators
+// flutter run --no-sound-null-safety
 
 import 'package:flutter/material.dart';
+import 'package:login/auth/Loginscreen.dart';
 // import 'package:login/prototype/api_profile.dart';
 import 'package:login/splash_screen.dart';
 // import 'dart:io';
@@ -19,7 +22,7 @@ void main() async {
     debugShowCheckedModeBanner: false,
     home: data == null
         ? const SplashScreen()
-        : const BottomBar(), //profile page itu bottombar
+        : Loginscreen(), //profile page itu bottombar
     builder: EasyLoading.init(),
   ));
   configLoading();
