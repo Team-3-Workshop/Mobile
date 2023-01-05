@@ -104,7 +104,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
                   backgroundColor: Color(0xff25bac2)),
-              child: Text("Reset Password"))
+              child: Text("OK"))
         ],
       ),
     );

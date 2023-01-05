@@ -64,6 +64,14 @@ class _RanuKumboloState extends State<RanuKumbolo> {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, top: 2.0),
+            child: Text(
+              "BUKA",
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.green),
+            ),
+          ),
           SizedBox(
             height: 20,
           ),

@@ -554,12 +554,16 @@ class _register2State extends State<register2> {
                       if (response == true) {
                         EasyLoading.showSuccess("success..");
                       } else {
-                        EasyLoading.dismiss();
-                        ScaffoldMessenger.of(context).showSnackBar(
-                            // SnackBar(content: Text("invalid username or password")));
-                            SnackBar(
-                                content:
-                                    Text(loginrepository.registerMessage)));
+                        if (loginrepository.connectionFail != "") {
+                          EasyLoading.dismiss();
+                          ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(content: Text("connectionFail")));
+                          print("gagal");
+                        } else {
+                          EasyLoading.dismiss();
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text(loginrepository.registerMessage)));
+                        }
                       }
                     },
                     child: Text(

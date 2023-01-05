@@ -10,13 +10,15 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../BottomBar.dart';
 
 class authrepository {
-  final _baseUrl = "http://192.168.1.36:3000";
+  final _baseUrl = "http://192.168.18.81:3000";
 
   String loginMessage = "";
   String registerMessage = "";
   String forgotPWMessage = "";
   String resetPWMessage = "";
+  String connectionFail = "";
 
+  //login
   Future login(String email, String password) async {
     try {
       final response = await http.post(Uri.parse(_baseUrl + '/auth/login'),
@@ -34,10 +36,12 @@ class authrepository {
         return false;
       }
     } catch (e) {
+      connectionFail = e.toString();
       print(e.toString());
     }
   }
 
+//register
   Future register3(
       String firstname,
       String lastname,
@@ -73,10 +77,13 @@ class authrepository {
         return false;
       }
     } catch (e) {
-      print(e.toString());
+      // print(e.toString());
+      connectionFail = e.toString();
+      print(connectionFail);
     }
   }
 
+//forgotPW
   Future forgotPW(String email) async {
     try {
       final response = await http
@@ -97,6 +104,7 @@ class authrepository {
     }
   }
 
+//resetPW
   Future resetPW(String password) async {
     SharedPreferences resetPWid = await SharedPreferences.getInstance();
     var data = resetPWid.getString('id');

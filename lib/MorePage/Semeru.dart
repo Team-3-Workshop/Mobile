@@ -62,6 +62,14 @@ class SemeruState extends State<Semeru> {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, top: 2.0),
+            child: Text(
+              "TUTUP",
+              style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red),
+            ),
+          ),
+
           SizedBox(
             height: 20,
           ),

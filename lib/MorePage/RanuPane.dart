@@ -62,6 +62,14 @@ class _RanuPaneState extends State<RanuPane> {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.only(left: 8.0, top: 2.0),
+            child: Text(
+              "BUKA",
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.green),
+            ),
+          ),
           SizedBox(
             height: 20,
           ),
