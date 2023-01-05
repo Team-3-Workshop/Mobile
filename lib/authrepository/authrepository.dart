@@ -26,7 +26,7 @@ class authrepository {
       final output = jsonDecode(response.body);
       if (response.statusCode == 200) {
         SharedPreferences storage = await SharedPreferences.getInstance();
-        await storage.setString('data', output['data']['email']);
+        await storage.setString('data', output['data']['id']);
         var data = storage.getString('data');
         print("login as $data");
         return true;

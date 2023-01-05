@@ -1,6 +1,9 @@
-import 'dart:convert';
+// ignore_for_file: avoid_print, unused_import, prefer_interpolation_to_compose_strings
 
+import 'dart:convert';
+import "package:login/authrepository/authrepository.dart";
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HttpEditProfile {
   String firstName, fullName, citizen, nik, address, date, phone;
@@ -26,8 +29,10 @@ class HttpEditProfile {
       String nik,
       String address,
       String phone) async {
-    Uri url = Uri.parse(
-        "http://192.168.1.39:3000/api/users/53b40c05-f816-4030-b7c2-ff147548aa5f");
+    SharedPreferences storage = await SharedPreferences.getInstance();
+    var id = storage.getString('data');
+    print(id);
+    Uri url = Uri.parse("http://192.168.1.11:3000/api/users/" + id.toString());
 
     var hasilResponse = await http.patch(url, body: {
       // "id": id,
