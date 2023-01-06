@@ -334,7 +334,8 @@ class _EditProfileState extends State<EditProfile> {
                                 dataResponse = value;
                               });
                             });
-                            print(responseFirstName);
+                            print("edit");
+                            print(responseFirstName.text);
                           }, //ini lom diisi bg
                           child: Text(
                             "Refresh data",

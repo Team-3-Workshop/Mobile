@@ -331,17 +331,21 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 450, left: 290),
-                child: AnimatedSmoothIndicator(
-                  activeIndex: _activeIndex,
-                  count: 5,
-                  effect: const JumpingDotEffect(
-                      dotHeight: 10,
-                      dotWidth: 10,
-                      jumpScale: .7,
-                      verticalOffset: 20,
-                      activeDotColor: Colors.red,
-                      dotColor: Colors.grey),
+                padding: const EdgeInsets.only(right: 20),
+                child: Container(
+                  height: 470,
+                  alignment: Alignment.bottomRight,
+                  child: AnimatedSmoothIndicator(
+                    activeIndex: _activeIndex,
+                    count: 5,
+                    effect: const JumpingDotEffect(
+                        dotHeight: 10,
+                        dotWidth: 10,
+                        jumpScale: .7,
+                        verticalOffset: 20,
+                        activeDotColor: Colors.red,
+                        dotColor: Colors.grey),
+                  ),
                 ),
               ),
             ],

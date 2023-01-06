@@ -14,14 +14,12 @@ import 'package:shared_preferences/shared_preferences.dart'; //sop
 
 class Profile extends StatefulWidget {
   // const Profile({super.key});
-
   @override
   State<Profile> createState() => _ProfileState();
 }
 
 class _ProfileState extends State<Profile> {
   File? image;
-
   Future getImage() async {
     final ImagePicker _picker = ImagePicker();
     final XFile? imagePicked =

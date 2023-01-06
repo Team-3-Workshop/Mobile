@@ -32,7 +32,7 @@ class HttpEditProfile {
     SharedPreferences storage = await SharedPreferences.getInstance();
     var id = storage.getString('data');
     print(id);
-    Uri url = Uri.parse("http://192.168.1.11:3000/api/users/" + id.toString());
+    Uri url = Uri.parse("http://192.168.1.10:3000/api/users/" + id.toString());
 
     var hasilResponse = await http.patch(url, body: {
       // "id": id,

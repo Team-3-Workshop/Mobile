@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:login/imageLink/imageLink.dart';
-import 'package:login/pages/home/zoom/ranuPane1.dart'; //RP1
-import 'package:login/pages/home/zoom/ranuPane2.dart'; //RP2
-import 'package:login/pages/home/zoom/ranuPane3.dart'; //RP3
-import 'package:login/pages/home/zoom/ranuPane4.dart'; //RP4
-import 'package:login/pages/home/zoom/ranuPane5.dart'; //RP5
 import 'package:native_pdf_view/native_pdf_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 

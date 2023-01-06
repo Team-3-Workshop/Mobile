@@ -8,7 +8,7 @@ import 'package:login/auth/Loginscreen.dart';
 import 'package:login/splash_screen.dart';
 // import 'dart:io';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-// import 'package:login/auth/Loginscreen.dart';
+// import 'package:login/auth/Loginscreen.dart'; 
 // import 'package:login/auth/profile2.dart';
 import 'package:login/BottomBar.dart';
 import 'package:shared_preferences/shared_preferences.dart';

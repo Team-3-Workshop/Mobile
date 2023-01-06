@@ -2,11 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:login/imageLink/imageLink.dart';
-import 'package:login/pages/home/zoom/ranuKumbolo1.dart'; //RK1
-import 'package:login/pages/home/zoom/ranuKumbolo2.dart'; //RK2
-import 'package:login/pages/home/zoom/ranuKumbolo3.dart'; //RK3
-import 'package:login/pages/home/zoom/ranuKumbolo4.dart'; //RK4
-import 'package:login/pages/home/zoom/ranuKumbolo5.dart'; //RK5
 import 'package:native_pdf_view/native_pdf_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';
 
